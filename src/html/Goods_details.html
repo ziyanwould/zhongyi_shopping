@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>商品详情页</title>
+		<link rel="stylesheet" href="../css/base.css" />
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/Description.css" />
+		<script type="text/javascript" src="../js/jquery-1.12.0.js" ></script>
+		<script src='../js/jquery-1.8.3.min.js'></script>
+        <script src='../js/jquery.elevateZoom-3.0.8.min.js'></script>
+	</head>
+	<body>
+		<div class="indexTop">
+	    <div class="wrap">
+		    <a class="collect left" href="#">收藏中一办公</a>
+		    <div class="con right">
+			    <font color="#666666">您好，欢迎来到中一办公&nbsp;！</font> 				
+			    <a class="dlzc" href="#">请登录</a>
+			    |<a class="dlzc" href="#">免费注册</a>
+				|<a href="#">我的订单</a>|<a class="my" href="#">我的中一</a>
+				|<a class="my" href="#">帮助中心</a>
+				|<a href="#" >在线客服</a>|<font color="#666666">&nbsp;&nbsp;010-67266715</font>
+		    </div>
+	    </div>
+        </div>
+
+<!--头部-->
+	<header style="width:100%;" class="sub">
+		<div style="width:1210px; margin:0 auto;" class="wrap">
+			<h1 class="logo left"><a href="#">中一办公</a></h1>
+			<div style=" margin-left:207px;" class="serach left">
+	            <form name="search" id="search" method="get" action="#">
+	            	<input class="txt left" type="text" placeholder="请输入商品或商家" value="" name="goods_s">
+	            	<input class="btn left" type="submit" value="" name="">
+	            	
+	            </form>
+	            
+				<p class="text">热门搜索：    			
+					<a href="#">硒鼓</a>
+					<a href="#">墨盒</a>
+					<a href="#">白板</a>
+					<a href="#">复印纸</a>
+				</p>
+			</div>
+			<div style="margin-right:41px;" class="shopCar right">
+				<a href="#">去购物车结算</a>
+				<span class="num">1</span>
+			</div>
+			<div class="clear"></div>
+	    <nav class="nav left">
+			<dl>
+			    <dt>
+			    	<span style="background: url(../img/sortTitbg2.jpg) ;">所有商品分类</span>						
+				</dt>
+				<dd><a href=nav>首　页</a>
+					<ul class="nav_sub"></ul>
+				</dd>
+				<dd>
+					<a href=nav>品牌专区</a>
+					<ul class="nav_sub"></ul>
+				</dd>
+				<dd><a href=#>优惠特价</a>
+					<ul class="nav_sub"></ul>
+				</dd>
+				<dd>
+					<a href="#">积分兑换</a>
+					<ul class="nav_sub"></ul>
+				</dd>
+				<dd>
+					<a href="#">快速订单</a>
+					<ul class="nav_sub"></ul>
+				</dd>			
+			</dl>
+	    </nav>
+			<div class="topScroll right">
+				<div class="con">
+					<div class="wrap">																																				    
+					    <a href="#"><img src="../img/index_img/1393169096.jpg" width="180" width="135" height="35" ></a>
+					    <a href="#"><img src="../img/index_img/1393174338.jpg" width="180" width="135" height="35" ></a>
+					    <a href="#"><img src="../img/index_img/1393166166.jpg" width="180" width="135" height="35" ></a>
+					</div>
+				</div>
+				<span class="top"></span>
+				<span class="bom"></span>
+			</div>
+		</div>
+	</header>
+	
+	
+	<!--详细页当前位置-->
+	<div class="good_middle">
+		<div class="infoNav">
+			<p>商品展示　&gt;　一体机　&gt;　惠普（HP） LaserJet Pro M1136 黑白多功能激光一体机 （打印 复印 扫描）</p>	
+		</div>
+		<div class="infoIndexcon">
+			<div class="mousetrap left">
+				<!--<img src="../css/img/goodS/1408937521.jpg" width="180" />-->
+				<img id="zoom_04" src='../css/img/goodS/0894min.jpg' data-zoom-image="../css/img/goodS/0894big.jpg"/>
+			</div>
+			<div class="text left">
+				<h3 class="tit">惠普（HP） LaserJet Pro M1136 黑白多功能激光一体机 （打印 复印 扫描） </h3>
+				<div class="info"></div>
+				<ul class="infoList">
+					<li><strong>商品货号：</strong>13202018</li>
+	 				<li><strong>商品品牌：</strong>
+						HP				
+	 				</li>
+					<li><strong>已&nbsp;售&nbsp;出：</strong>10件</li>
+				                
+                </ul>
+                
+	        	<div class="price">中一价格：<strong >￥1275.00/台</strong></div>
+				<div class="num">
+					<div class="boxs">
+						<span>购买数量：</span>
+						<input type="text" id="buynum" >
+					</div>
+					<div class="jiajian left">
+						<p class="jia"></p>
+						<p class="jian"></p>
+					</div>
+					
+				</div>
+	            <div class="buy">
+				<a href="#"><span id="buynow">立刻购买</span></a>
+				<a href="#"><span id="buycar">加入购物车</span></a>
+				<a href="#"><span id="cellect">收藏商品</span></a>
+				
+				
+			</div>
+			</div>
+			
+		</div>
+	    <div class="infoNav">
+	    	<div class="btn">
+		    	<a href="#"><img class="btnZ" src="../css/img/goodS/img81.jpg" width="180" /></a>
+		    	<a href="#"><img class="poto" src="../css/img/goodS/0896mini.jpg" width="180"/></a>
+		    	<a href="#"><img align="right" class="btnZ" src="../css/img/goodS/img8.jpg" width="180" /></a>
+	    	</div>
+	    </div>
+	    <div class="infoNav">
+	    	<div class="share">
+		    	<a href="#"><img src="../css/img/goodS/share.jpg" width="180"/><span>分享到：</span></a>
+		    	<a href="#"><img src="../css/img/goodS/xinlang.jpg" width="180"/><strong>新浪微博</strong></a>
+		    	<a href="#"><img src="../css/img/goodS/tengxun.jpg" width="180"/><strong>腾讯微博</strong></a>
+		    	<a href="#"><img src="../css/img/goodS/renern.jpg" width="180"/><strong>人人网</strong></a>
+		    	<a href="#"><img src="../css/img/goodS/weixin.jpg" width="180"/><strong>微信</strong></a>
+	    	</div>
+	    </div>		
+	</div>
+	
+	<div class="good_middle">
+	<div class="infoNav">
+	<div class="integration left">
+		<dl style="margin-top:0px;" class="integrationLeftList">
+			<dt>最新商品</dt>
+			<dd>
+				<a class="img" href="#"><img src="../css/img/goodS/1408711177.jpg" width="180" ></a>
+				<a class="title" href="#">佳能（Canon） iC MF8210Cn 彩色激光网...</a>
+			    <span class="price" >¥<b>3800.00/台</b></span>
+			</dd>
+  			<dd>
+				<a class="img" href="#"><img src="../css/img/goodS/1428638151.png" width="180" ></a>
+				<a class="title" href="#">惠普（HP）LaserJetM226dw激光多功能...</a>
+				<span class="price">¥<b>2750.00/台</b></span>
+			</dd>
+  			<dd>
+				<a class="img" href="#"><img src="../css/img/goodS/1408707822.jpg" width="180" ></a>
+				<a class="title" href="#">佳能（Canon） iC MF8280Cw 彩色激光...</a>
+			<span class="price" >¥<b>5200.00/台</b></span>
+			</dd>
+  			<dd>
+				<a class="img" href="#"><img src="../css/img/goodS/1433060242.png" width="180" ></a>
+				<a class="title" href="#">佳能（Canon） MF212w 黑白激光多功能无...</a>
+				<span class="price">¥<b>2450.00/台</b></span>
+			</dd>
+	  		</dl>
+       
+		<dl class="integrationLeftList">
+			<dt>促销商品</dt>
+  			<dd>
+				<a class="img" href="#"><img src="../css/img/goodS/1408708637.jpg" width="180" ></a>
+				<a class="title" href="#">惠普(HP)Deskjet 1511惠众系列彩色喷墨一...</a>
+				<span class="price">¥<b>328.00/台</b></span>
+			</dd>
+  			<dd>
+				<a class="img" href="#"><img src="../css/img/goodS/1408937521.jpg" width="180" ></a>
+				<a class="title" href="#">惠普（HP） LaserJet Pro M1136 黑白...</a>
+				<span class="price">¥<b>1275.00/台</b></span>
+			</dd>
+	  		</dl>
+		<dl class="integrationLeftList2">
+			<dt>热销排行</dt>
+ 		</dl>
+		 <dl class="integrationLeftList">
+			<dt>您可能会喜欢</dt>
+  			<dd>
+				<a class="img" href="#"><img src="../css/img/goodS/1408941156.jpg" width="180" ></a>
+				<a class="title" href="#">惠普（HP） LaserJet Pro M1213nf 黑...</a>
+				<span class="price" >¥<b>1850.00/台</b></span>
+			</dd>
+  			<dd>
+				<a class="img" href="#"><img src="../css/img/goodS/1408930702.jpg" width="180" ></a>
+				<a class="title" href="#">佳能（Canon）iC MF3010 超值经济黑白激...</a>
+				<span class="price" >¥<b>1425.00/台</b></span>
+			</dd>
+  			<dd>
+				<a class="img" href="#"><img src="../css/img/goodS/1408931726.jpg" width="180" ></a>
+				<a class="title" href="#">佳能(Canon) ic MF4750 黑白激光多功能一...</a>
+				<span class="price" >¥<b>2100.00/台</b></span>
+			</dd>
+  			<dd>
+				<a class="img" href="#"><img src="../css/img/goodS/1408932492.jpg" width="180" ></a>
+				<a class="title" href="#">佳能（Canon）iC MF4870dn 黑白激光网络...</a>
+				<span class="price" >¥<b>2890.00/台</b></span>
+			</dd>
+  		</dl>
+		<dl class="integrationLeftList2">
+			<dt>最近浏览</dt>
+ 			<dd>
+				<a class="img" href="#"><img src="../css/img/goodS/1465122167.jpg"  width="60" height="60"></a>
+				<a class="title" href="#">竹叶青   1000g净化空气碳 活性炭 除甲醛净...</a>
+				<span class="price">¥<b>18.00/包</b></span>
+			</dd>
+			<dd>
+				<a class="img" href="#"><img src="../css/img/goodS/1408937521.jpg"  width="60" height="60" ></a>
+				<a class="title" href="#">惠普（HP） LaserJet Pro M1136 黑白...</a>
+				<span class="price" >¥<b>1275.00/台</b></span>
+			</dd>
+						
+		</dl>
+	 </div>
+	 
+	 <!--详细页面-->
+	<script type="text/javascript">
+		$(function(){
+			$('#infoIndeMain1').find('.tabTit').find('li').click(function(){
+				var num=$(this).index();
+				$(this).addClass('hover');
+				$(this).siblings().removeClass('hover');
+
+				$('#infoIndeMain1').find(".context").hide();
+				$('#infoIndeMain1').find(".context").eq(num).show();
+
+				})
+		})
+	</script>
+	<div class="infoIndeMain right" id="infoIndeMain1">
+		<ul class="tabTit">
+			<li class="hover">商品详情</li>
+			<li>配送时间</li>
+			<li>支付说明</li>
+			<li>售后服务</li>
+			<li>用户咨询</li>
+			<li>评价</li>
+		</ul>
+		<div class="context">
+			<li>
+				商品名称：惠普LaserJet Pro M1136
+			</li>
+			<li>
+				商品毛重：7.0kg
+			</li>
+			<li>
+				商品产地：中国
+			</li>
+			<li>
+				多功能：打印/复印/扫描
+			</li>
+			<li>
+				网络打印：不支持
+			</li>
+			<li>
+				幅面：A4
+			</li>
+			<li>
+				用途：居家办公，工作组，部门级
+			</li>
+			<li>
+				类型：黑白激光
+			</li>		  
+		</div>
+		
+		<div class="context hid">
+		  	<p style="color:#666666;font-family:Arial;background-color:#FFFFFF;">
+	      	<strong>配送服务时间：</strong><br>
+                         	 周一至周五<span style="color:#E53333;">
+      		<strong>&nbsp;8:30-18:00&nbsp;</strong></span><br>
+                           	 工作日晚间及周六、周日如有特殊需求请联系客服。<br>
+                           	 国定假日配送时间另行公告。<br>
+                         	  注：
+			</p>
+		<ul style="color:#666666;font-family:Arial;background-color:#FFFFFF;">
+			<li>
+				部分供应商直送商品和需请购商品，销售服务人员将与您确认具体可送达的日期和相关事宜
+			</li>
+			<li>
+				对于特殊情况不能及时送达，销售服务人员将随时电话联系客户协商调整送货时间
+			</li>
+			<li>
+				如遇大雨、台风等自然因素，为确保商品品质和送货安全，将会酌情延迟送货
+			</li>
+			<li>
+				某些季节性送货时间略有调整，请以网站公告为准
+			</li>
+		</ul>		
+		</div>
+				
+				
+		<div class="context hid">
+ 	    <p>
+			<strong>支付情况说明：</strong>
+		</p>
+		<p>
+			<span style="color:#777777;font-family:Arial;line-height:32px;background-color:#FFFFFF;">商品到货时,客户须支付货款及未满规定免费送货金额时的送货费。</span> 
+		</p>
+		<p>
+			<span style="color:#777777;font-family:Arial;line-height:32px;background-color:#FFFFFF;">部分商品或服务需支付预付款，货款到账确认后发货。</span> 
+		</p>
+		<p>
+			<span style="color:#777777;font-family:Arial;line-height:32px;background-color:#FFFFFF;">订购金额稳定的个别客户根据中一办公的信用评估结果，可签订月结合同，月底结款。</span> 
+		</p>		
+		</div>
+				
+		<div class="context hid">
+	        <p class="MsoNormal">
+			<strong>售后服务说明：</strong> 
+			</p>
+			<p class="MsoNormal">
+			<span style="color:#666666;">拨打客服电话，即可预约上门服务。</span> 
+			</p>
+			<p class="MsoNormal">
+			<span style="color:#666666;">上门服务包括：免费退换货，设备选配方案咨询、安装调试、设备更换、设备维修、代客送检等。</span> 
+			</p>
+			<br>		
+		</div>
+		
+		<div class="context hid">
+  		</div>
+			<div class="context hid">
+  				<div class="con">
+						<!-- 评论区域开始 -->
+			<ul class="commlist">
+			</ul>
+			<div class="commnum">
+				<span>
+					<i>0</i>条评论
+				</span>
+			</div>
+			<div class="commnet">
+				<form name="form" id="form">
+					<div class="msg">
+						<textarea name="comment" id="comment">说点什么吧...</textarea>
+					</div>
+					<div class="toolbar">
+						<div class="options">
+							不想登录？直接点击发布即可作为游客留言。
+						</div>
+						<button class="button" type="button" style="border-top:1px solid #CCC;">发 布</button>
+						<input type="hidden" value="7851" id="aid">
+					</div>
+				</form>
+			</div>
+			<!-- 评论区域结束 -->
+					</div>
+		</div>
+		<div class="infoTit" style="margin:30px 0 14px 0"><span>商品展示</span></div>
+		 <img src="../img/goods1.jpg" />
+		  <img  src="../img/goods2.jpg" />
+		   <img style="padding-top:28px ;"  src="../img/goods3.jpg" />
+		    <img src="../img/goods4.jpg" />
+	                                       <br>
+       		</div>
+		</div>
+	</div>
+	
+	<!--注册页面底部-->
+        <div class="end sub">
+			<div class="serviceLink">
+				<dl>
+					<dt>购物指南</dt>
+								   <dd><a href="#">注册新用户</a></dd>
+					 			   <dd><a href="#">购物流程</a></dd>
+					 			   <dd><a href="#">订单查询</a></dd>
+					 			   <dd><a href="#">常见购物问题</a></dd>
+					 			
+				</dl>
+				<dl>
+					<dt>订单支付</dt>
+							       <dd><a href="#">货到付款</a></dd>
+					 			   <dd><a href="#">在线支付</a></dd>
+					 			   <dd><a href="#">如何办理退款</a></dd>
+					 			   <dd><a href="#">发票制度</a></dd>
+					 			
+				</dl>
+				<dl>
+					<dt>订单配送</dt>
+								   <dd><a href="#">配送费用</a></dd>
+					 			   <dd><a href="#">配送时间和范围</a></dd>
+					 			   <dd><a href="#">配送常见问题</a></dd>
+					 			   <dd><a href="#">配送方式</a></dd>
+					 			
+				</dl>
+				<dl>
+					<dt>售后服务</dt>
+							       <dd><a href="#">缺货处理</a></dd>
+					 			   <dd><a href="#">退换货政策</a></dd>
+					 			   <dd><a href="#">退换货流程</a></dd>
+					 			   <dd><a href="#">联系客服</a></dd>
+					 			
+				</dl>
+				<dl>
+					<dt>帮助中心</dt>
+								   <dd><a href="#">关于我们</a></dd>
+					 			   <dd><a href="#">积分兑换</a></dd>
+					 			   <dd><a href="#">建议反馈</a></dd>
+					 			   <dd><a href="#">正品保证</a></dd>
+				</dl>	 		
+			</div>
+			
+			
+			<p class="logo">Copyright © 2016 北京中一文仪商贸有限公司 All Rights Reserved 备案号：京ICP备14012128号&nbsp;&nbsp;<img src="../css/img/pic.gif"> </p>
+		</div>
+		
+		<script>
+			$("#zoom_04").elevateZoom({
+				zoomWindowFadeIn:500,
+				zoomWindowFadeOut:500,
+				lensFadeIn: 500,
+				lensFadeOut:500
+			});
+		</script>
+	
+	</body>
+</html>

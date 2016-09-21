@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>中一办公商城 - 会员注册</title>
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/base.css" />
+		<script type="text/javascript" src="../js/jquery-2.1.0.min.js" ></script>
+		<script type="text/javascript" src="../js/easyform.js" ></script>
+	</head>
+	<body>
+		
+		<!--
+        	作者：448736378@qq.com
+        	时间：2016-09-14
+        	描述：
+        -->
+        <!-- 注册页头部-->
+        <div class="headall">
+        	<div class="headcontent">
+        		<h1>
+        			<img src="../img/subLogo.jpg" />
+        		</h1>
+        		<div class="return">
+        			<div class="return-one"><a href="#">返回主页</a>|<a href="#">帮助中心</a></div>
+        		<p>如遇注册问题请拔打：<span>010-67266715</span></p>
+        		</div>       		
+        	</div>      	
+        </div>
+        
+        <!--注册页主体-->
+    <div class="Main">
+	<!--注册-->
+	<div class="Zhuce">
+		<ul class="biaoti">
+			<li class="hover"><a href="#">个人用户注册</a></li>
+			</a><li><a href="#"></a><a href="#">企业用户注册</a></li>
+		</ul>
+		<div class="con">
+		  <form class="registerform">			
+			<table cellpadding="0" cellspacing="0">
+				<tbody><tr height="37">
+					<td width="90" align="right"><img src="../img/user.jpg" width="30" height="30" alt=""></td>
+					<td width="10"></td>
+					<td><span class="tit">新用户注册</span></td>
+				</tr>
+				<tr height="37">
+					<td class="oRight">用户名</td>
+					<td width="10"></td>
+					<td><input class="text" type="text" id="uid" easyform="length:4-16;char-normal;real-time;" message="用户名必须为4—16位的英文字母或数字" easytip="disappear:lost-focus;theme:blue;" ajax-message="用户名已存在!"><span class="star">*</span></td>
+				</tr>
+				<tr height="37">
+					<td class="oRight">email</td>
+					<td width="10"></td>
+					<td><input class="text" type="text" id="email" easyform="email;real-time;" message="Email格式要正确" easytip="disappear:lost-focus;theme:blue;" ajax-message="这个Email地址已经被注册过，请换一个吧!"><span class="star">*</span></td>
+				</tr>
+				<tr height="37">
+					<td class="oRight">&nbsp;</td>
+					<td width="10"></td>
+					<td><font color="#969696">请正确填写您的常用电子邮件地址，作为密码取回之用。</font></td>
+				</tr>
+				<tr height="37">
+					<td class="oRight">密码</td>
+					<td width="10"></td>
+					<td><input class="text" type="password" id="psw1" easyform="length:6-16;" message="密码必须为6—16位" easytip="disappear:lost-focus;theme:blue;"><span class="star">*</span></td>
+				</tr>
+				<!--<tr height="37">
+					<td class="oRight">密码强度</td>
+					<td width="10"></td>
+					<td><span style=" padding:0 25px;">弱</span><span style=" padding:0 25px;">中</span><span style=" padding:0 25px;">强</span></td>
+				</tr>-->
+				<tr height="37">
+					<td class="oRight">确认密码</td>
+					<td width="10"></td>
+					<td><input class="text" type="password" id="psw2" easyform="length:6-16;equal:#psw1;" message="两次密码输入要一致" easytip="disappear:lost-focus;theme:blue;"><span class="star">*</span></td>
+				</tr>
+
+				<tr height="37">
+					<td class="oRight">MSN</td>
+					<td width="10"></td>
+					<td><input class="text" type="text" easyform="email;real-time;" message="MSN是邮件格式" easytip="disappear:lost-focus;theme:blue;"></td>
+				</tr>
+				<tr height="37">
+					<td class="oRight">QQ</td>
+					<td width="10"></td>
+					<td><input class="text" name="qqnum" type="text" easyform="qq;real-time;" message="请填写正确QQ号" easytip="disappear:lost-focus;theme:blue;" ></td>
+				</tr>
+				<tr height="37">
+					<td class="oRight">办公电话</td>
+					<td width="10"></td>
+					<td><input class="text" type="text" easyform="tell;real-time;" message="电话格式出错" easytip="disappear:lost-focus;theme:blue;"></td>
+				</tr>
+				<tr height="37">
+					<td class="oRight">家庭电话</td>
+					<td width="10"></td>
+					<td><input class="text" name="telephone" type="text" easyform="tell;real-time;" message="电话格式出错" easytip="disappear:lost-focus;theme:blue;"></td>
+				</tr>
+				<tr height="37">
+					<td class="oRight">手机</td>
+					<td width="10"></td>
+					<td><input class="text" name="mobile" type="text" easyform="phi;real-time;" message="请填写正确手机号" easytip="disappear:lost-focus;theme:blue;"></td>
+				</tr>
+				<tr height="37">
+					<td class="oRight">密码提示问题</td>
+					<td width="10"></td>
+					<td>
+					    <select name="question" id="question">
+						<option value="0">无安全提问</option><option value="1">母亲的名字</option><option value="2">爷爷的名字</option><option value="3">父亲出生的城市</option><option value="4">你其中一位老师的名字</option><option value="5">你个人计算机的型号</option><option value="6">你最喜欢的餐馆名称</option><option value="7">驾驶执照最后四位数字</option>
+					    </select>
+					</td>
+				</tr>
+				<tr height="37">
+					<td class="oRight">密码问题答案</td>
+					<td width="10"></td>
+					<td><input class="text" name="answer" type="text" id="nickname" easyform="length:2-16" message="密码问题答案必须为2—16位" easytip="disappear:lost-focus;theme:blue;"><span class="star">*</span></td>
+				</tr>
+				<tr height="140">
+					<td class="oRight">&nbsp;</td>
+					<td width="10"></td>
+					<td>
+						<label><input class="cheak" type="checkbox" checked="checked">&nbsp;<font color="#404040">我已看过并接受</font></label><a class="agreement" href="#">《用户协议》</a>
+						<input class="btn" type="submit" value="立即注册">
+						<a class="has" href="#">我已有帐号，我要登录</a><br>
+						<a class="has" href="#">您忘记密码了吗？</a>
+					</td>
+				</tr>
+				
+			</tbody>
+			</table>
+			</form>
+		</div>
+	</div>
+</div>
+        
+        <!--注册页面底部-->
+        <div class="end sub">
+			<div class="serviceLink">
+				<dl>
+					<dt>购物指南</dt>
+								   <dd><a href="#">注册新用户</a></dd>
+					 			   <dd><a href="#">购物流程</a></dd>
+					 			   <dd><a href="#">订单查询</a></dd>
+					 			   <dd><a href="#">常见购物问题</a></dd>
+					 			
+				</dl>
+				<dl>
+					<dt>订单支付</dt>
+							       <dd><a href="#">货到付款</a></dd>
+					 			   <dd><a href="#">在线支付</a></dd>
+					 			   <dd><a href="#">如何办理退款</a></dd>
+					 			   <dd><a href="#">发票制度</a></dd>
+					 			
+				</dl>
+				<dl>
+					<dt>订单配送</dt>
+								   <dd><a href="#">配送费用</a></dd>
+					 			   <dd><a href="#">配送时间和范围</a></dd>
+					 			   <dd><a href="#">配送常见问题</a></dd>
+					 			   <dd><a href="#">配送方式</a></dd>
+					 			
+				</dl>
+				<dl>
+					<dt>售后服务</dt>
+							       <dd><a href="#">缺货处理</a></dd>
+					 			   <dd><a href="#">退换货政策</a></dd>
+					 			   <dd><a href="#">退换货流程</a></dd>
+					 			   <dd><a href="#">联系客服</a></dd>
+					 			
+				</dl>
+				<dl>
+					<dt>帮助中心</dt>
+								   <dd><a href="#">关于我们</a></dd>
+					 			   <dd><a href="#">积分兑换</a></dd>
+					 			   <dd><a href="#">建议反馈</a></dd>
+					 			   <dd><a href="#">正品保证</a></dd>
+				</dl>	 		
+			</div>
+			
+			
+			<p class="logo">Copyright © 2016 北京中一文仪商贸有限公司 All Rights Reserved</p>
+		</div>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$('.registerform').easyform();
+			
+		 	
+		});
+		</script>
+
+	</body>
+</html>

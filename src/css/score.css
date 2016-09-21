@@ -1,0 +1,153 @@
+/*积分兑换*/
+
+.integration{ width:219px;}
+
+.integrationMain{ width:985px; overflow:hidden; position:relative;}
+
+.integration .integrationLeftList{ width:217px; overflow:hidden; border:1px solid #e0e0e0; margin-top:10px;}
+
+.integration .integrationLeftList dt{ height:30px; line-height:30px; padding-left:18px; background-color:#f6f6f6; font-weight:bold; font-size:14px; color:#5e5e5e;}
+
+.integration .integrationLeftList dd{ border-bottom:1px solid #f6f6f6; padding:0 15px 15px 15px;}
+
+.integration .integrationLeftList dd .img{ width:180px; height:auto; margin:10px auto; overflow:hidden; display:block;}
+
+.integration .integrationLeftList dd .title{ text-align:justify; display:block; line-height:21px; color:#5e5e5e;}
+
+.integration .integrationLeftList dd .title:link,.integration .integrationLeftList dd .title:visited{ color:#5e5e5e;}
+
+.integration .integrationLeftList dd .price{ padding:5px 0; color:#ea2c2c; font-weight:bold;}
+
+.integration .integrationLeftList2{ width:217px; overflow:hidden; border:1px solid #e0e0e0; margin-top:10px;}
+
+.integration .integrationLeftList2 dt{ height:30px; line-height:30px; padding-left:18px; background-color:#f6f6f6; font-weight:bold; font-size:14px; color:#5e5e5e;}
+
+.integration .integrationLeftList2 dd{ padding-bottom:10px; border-bottom:1px solid #f6f6f6; float:left;}
+
+.integration .integrationLeftList2 dd .img{ width:60px; height:60px; margin:20px 0 0 13px; overflow:hidden; float:left;}
+
+.integration .integrationLeftList2 dd .title{ text-align:justify; width:120px; float:left; margin:16px 0 0 8px; line-height:21px; color:#5e5e5e; overflow:hidden;}
+
+.integration .integrationLeftList2 dd .title:link,.integration .integrationLeftList dd .title:visited{ color:#5e5e5e;}
+
+.integration .integrationLeftList2 dd .price{ padding:5px 0 0 8px; display:inline-block; color:#ea2c2c; font-weight:bold;}
+
+.integrationMain .search{ height:35px; line-height:35px; overflow:hidden;margin-bottom:4px}
+
+.integrationMain .search .text{ color:#868686; font-family:'宋体';}
+
+.integrationMain .search .text strong{ font-size:14px; font-weight:bold; color:#333;}
+
+.integrationMain .search .con{ width:201px; height:24px; border:1px solid #ccc; margin:5px 0 0 10px; float:left; _display:inline;}
+
+.integrationMain .search .con .txt{ border:none; float:left; width:145px; height:24px; padding:0 5px;border-top-width: 0px;
+
+	border-right-width: 0px;
+
+	border-bottom-width: 0px;
+
+	border-left-width: 0px;
+
+	border-top-style: none;
+
+	border-right-style: none;
+
+	border-bottom-style: none;
+
+	border-left-style: none;background:none; line-height:24px; font-family:arial;}
+
+.integrationMain .search .con .btn{ float:right; text-align:center; line-height:24px; color:#363636; background-color:#f8f8f8; width:44px; height:24px; border:none; cursor:pointer;}
+
+.integrationMain .ppList{ overflow:hidden; line-height:35px;border-bottom:1px solid #f2f2f2;}
+
+.integrationMain .ppList .tit{ float:left; width:80px; font-weight:bold; color:#333; font-size:14px;text-align:right;}
+
+.integrationMain .ppList dl{ width:860px; float:left;}
+
+.integrationMain .ppList dd{ float:left; width:140px; font-size:14px;}
+
+.integrationMain .ppList dd a{ color:#5e5e5e;}
+
+.integrationMain .ppList dd a:link,.integrationMain .ppList dd a:visited{ color:#5e5e5e;}
+
+.integrationMain .jfList{ overflow:hidden; line-height:35px;border-bottom:1px solid #f2f2f2;}
+
+.integrationMain .jfList dt{ float:left; width:80px; font-weight:bold; color:#333; font-size:14px;text-align:right;}
+
+.integrationMain .jfList dd{  float:left; width:140px; font-size:14px;}
+
+.integrationMain .jfList dd a{ color:#5e5e5e;}
+
+.integrationMain .jfList dd a:link,.integrationMain .jfList dd a:visited{ color:#5e5e5e;}
+
+.integrationMain .integrationConList{ width:985px; overflow:hidden; margin-top:8px;}
+
+.integrationMain .integrationConList .title{ width:983px; height:40px; line-height:40px; overflow:hidden; border:1px solid #ddd;}
+
+.integrationMain .integrationConList .title .titlist li{ float:left; font-size:14px; text-align:center;}
+
+.integrationMain .integrationConList .title .titlist a{ float:left; font-size:14px; text-align:center;}
+
+.integrationMain .integrationConList .title .titlist  a{ border-right:1px solid #e0e0e0; display:block; height:40px; padding:0 22px; float:left; color:#333;}
+
+.integrationMain .integrationConList .title .titlist  a:link,.integrationMain .integrationConList .title .titlist  a:visited{ color:#333;}
+
+.integrationMain .integrationConList .title .titlist  a:hover{ border-right:1px solid #e70012; color:#fff; text-decoration:none; background-color:#e70012;}
+
+.integrationMain .integrationConList .title .titlist  a.hover{ border-right:1px solid #e70012; color:#fff; text-decoration:none; background-color:#e70012;}
+
+.integrationMain .integrationConList .title .titlist  a.hover:link,.integrationMain .integrationConList .title .titlist li a.hover:visited{ color:#fff;}
+
+.integrationMain .integrationConList .title .integrationPage{ font-size:16px;}
+
+.integrationMain .integrationConList .title .integrationPage span{ margin:11px 10px 0 0; vertical-align:top; height:24px; line-height:24px; display:inline-block;}
+
+.integrationMain .integrationConList .title .integrationPage .lBtn{ vertical-align:top; height:24px; line-height:24px; display:inline-block; margin:9px 10px 0 0; width:24px; background:url(../images/btn8.jpg) no-repeat; cursor:pointer;}
+
+.integrationMain .integrationConList .title .integrationPage .rBtn{ vertical-align:top; height:24px; line-height:24px; display:inline-block; margin:9px 10px 0 0; width:24px; background:url(../images/btn9.jpg) no-repeat; cursor:pointer;}
+
+.integrationMain .integrationConList .conList{ width:985px; padding-top:20px; position:relative; right:-2px; overflow:hidden;}
+
+.integrationMain .integrationConList .conList .ico-c{width:50px;height:50px;background:url(img/images/ico-c.png) no-repeat;position:absolute;right:8px;top:0px;z-index:98}
+
+.integrationMain .integrationConList .conList .ico-a{width:50px;height:50px;background:url(img/images/ico-a.png) no-repeat;position:absolute;right:8px;top:0px;z-index:98}
+
+.integrationMain .integrationConList .conList .ico-t{width:50px;height:50px;background:url(img/ico-t.png) no-repeat;position:absolute;right:8px;top:0px;z-index:98}
+.integrationMain .integrationConList .conList .singleprice{position:absolute;left:11px;top:3px;z-index:98;color:#ff0000;font-size:16px;font-weight:bold}
+
+
+.integrationMain .integrationConList .conList .ico-h{width:50px;height:50px;background:url(../images/ico-h.png) no-repeat;position:absolute;right:8px;top:0px;z-index:98}
+
+
+
+.integrationMain .integrationConList .conList li{position:relative; float:left; width:245px; height:410px;  border-bottom:1px solid #eaeaea; border-right:1px solid #eaeaea;}
+
+.integrationMain .integrationConList .conList li .img{ width:230px; height:230px; overflow:hidden; margin:0 auto; display:block;border:1px solid #fff;}
+
+.integrationMain .integrationConList .conList li .img:hover{ border:1px solid #ccc;}
+
+.integrationMain .integrationConList .conList li .name{height:40px; display:inline-block; padding:0 35px;margin-bottom:10px;overflow:hidden; line-height:21px; color:#333;}
+
+.integrationMain .integrationConList .conList li .name:link,.integrationMain .integrationConList .conList li .name:visited{ color:#333;}
+
+.integrationMain .integrationConList .conList li .price{ font-size:14px; padding:5px 0; font-weight:bold; color:#e60012; display:block; padding-left:35px; font-family:arial;}
+
+.integrationMain .integrationConList .conList li .jf{ display:block; padding-left:35px;margin:5px;}
+
+.integrationMain .integrationConList .conList li .jf b{ color:#e70012;}
+
+.integrationMain .integrationConList .conList li .duihuan{ width:200px; height:28px; margin:20px 0 0 25px;*margin:20px 0 0 15px; float:left; _display:inline;}
+
+.integrationMain .integrationConList .conList li .duihuan .txt{ width:30px; height:28px; line-height:28px; text-align:center; background:url(img/goodS/text1.jpg) no-repeat; border:none; font-family:arial;}
+
+.integrationMain .integrationConList .conList li .duihuan .jiajian{ width:16px; height:28px; margin-left:2px; _display:inline;}
+
+.integrationMain .integrationConList .conList li .duihuan .jiajian .jia{ cursor:pointer; width:16px; height:14px; background:url(img/goodS/btn5.jpg) no-repeat; display:block; overflow:hidden;}
+
+.integrationMain .integrationConList .conList li .duihuan .jiajian .jian{ cursor:pointer; width:16px; height:14px; background:url(img/goodS/btn6.jpg)  no-repeat; display:block; overflow:hidden;}
+
+.integrationMain .integrationConList .conList li .duihuan .btn{ width:90px; height:28px; float:left; margin-left:14px;}
+
+.integrationMain .integrationConList .conList li .duihuan .sc{ line-height:28px; height:28px; margin-left:8px; color:#333;}
+
+.integrationMain .integrationConList .conList li .duihuan .sc:link,.integrationMain .integrationConList .conList li .duihuan .sc:visited{ color:#33;}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登入界面</title>
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/base.css" />
+		<script type="text/javascript" src="../js/jquery-2.1.0.min.js" ></script>
+		<script type="text/javascript" src="../js/easyform.js" ></script>
+		<script src="../js/jquery.idcode.js"></script>
+	</head>
+	<body>
+		 <!-- 注册页头部-->
+        <div class="headall">
+        	<div class="headcontent">
+        		<h1>
+        			<img src="../img/subLogo.jpg" />
+        		</h1>
+        		<div class="return">
+        			<div class="return-one"><a href="#">返回主页</a>|<a href="#">帮助中心</a></div>
+        		<p>如遇注册问题请拔打：<span>010-67266715</span></p>
+        		</div>       		
+        	</div>      	
+        </div>
+        
+        <!--登入页主题-->
+        <<section class="login">
+			<!--登陆-->
+			<form>
+			<div class="AlLogin">
+				<hgroup class="tit">欢迎登陆</hgroup>
+				<table class="loginTable" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr height="17"></tr>
+						<tr height="44">
+							<td width="26"></td>
+							<td width="393">用户名：</td>
+						</tr>
+						<tr height="46">
+							<td></td>
+							<td><input class="text" type="text" name="username" id="username" easyform="length:4-16;char-normal;real-time;" message="用户名必须为4—16位的英文字母或数字" easytip="disappear:lost-focus;theme:blue;" ajax-message="用户名已存在!"></td>
+						</tr>
+						<tr height="42">
+							<td></td>
+							<td>密码：</td>
+						</tr>
+						<tr height="46">
+							<td></td>
+							<td><input class="text" type="password" name="password" id="password" easyform="length:6-16;" message="密码必须为6—16位" easytip="disappear:lost-focus;theme:blue;"></td>
+						</tr>
+						<tr height="42">
+							<td></td>
+							<td>验证码：</td>
+						</tr>
+						<tr height="46">
+							<td></td>
+							     <td colspan="2">
+							     	<input class="text" maxlength="5" type="text" style="width:100px" name="validate" id="validate" easyform="length:4;equal:#idcode;" message="区分大小写字母" easytip="disappear:lost-focus;theme:blue;">
+									<span><span class="ckstr" id="idcode" ></span> 
+									<a href="#" >看不清?</a>										
+									</span>
+							    </td>							
+						</tr>
+						
+					
+						<tr height="80">
+							<td></td>
+							<td>
+								<label><input class="check" type="checkbox" title="两周内自动登录"  id="savePwd" >自动登录</label>
+								<a class="forget" href="#">忘记密码？</a>
+							</td>
+						</tr>
+						<tr height="44">
+							<td></td>
+							<td>
+								<input type="submit" class="btn" id="btn" value="登陆">
+								<a class="AlLoginRegistered" href="#">注册</a>
+							</td>
+						</tr>
+						<tr height="67px">
+				</tbody>
+				</table>
+			</div>
+			</form>
+		</section>
+
+        
+        
+        <!--注册页面底部-->
+        <div class="end sub">
+			<div class="serviceLink">
+				<dl>
+					<dt>购物指南</dt>
+								   <dd><a href="#">注册新用户</a></dd>
+					 			   <dd><a href="#">购物流程</a></dd>
+					 			   <dd><a href="#">订单查询</a></dd>
+					 			   <dd><a href="#">常见购物问题</a></dd>
+					 			
+				</dl>
+				<dl>
+					<dt>订单支付</dt>
+							       <dd><a href="#">货到付款</a></dd>
+					 			   <dd><a href="#">在线支付</a></dd>
+					 			   <dd><a href="#">如何办理退款</a></dd>
+					 			   <dd><a href="#">发票制度</a></dd>
+					 			
+				</dl>
+				<dl>
+					<dt>订单配送</dt>
+								   <dd><a href="#">配送费用</a></dd>
+					 			   <dd><a href="#">配送时间和范围</a></dd>
+					 			   <dd><a href="#">配送常见问题</a></dd>
+					 			   <dd><a href="#">配送方式</a></dd>
+					 			
+				</dl>
+				<dl>
+					<dt>售后服务</dt>
+							       <dd><a href="#">缺货处理</a></dd>
+					 			   <dd><a href="#">退换货政策</a></dd>
+					 			   <dd><a href="#">退换货流程</a></dd>
+					 			   <dd><a href="#">联系客服</a></dd>
+					 			
+				</dl>
+				<dl>
+					<dt>帮助中心</dt>
+								   <dd><a href="#">关于我们</a></dd>
+					 			   <dd><a href="#">积分兑换</a></dd>
+					 			   <dd><a href="#">建议反馈</a></dd>
+					 			   <dd><a href="#">正品保证</a></dd>
+				</dl>	 		
+			</div>
+			
+			
+			<p class="logo">Copyright © 2016 北京中一文仪商贸有限公司 All Rights Reserved</p>
+		</div>
+        
+        <script>
+        $(document).ready(function(){
+			$('.login').easyform();
+			 
+			$.idcode.setCode();   //加载生成验证码方法
+		    $("#btn").click(function(){
+		        //var IsBy = $.idcode.validateCode()  //调用返回值，返回值结果为true或者false
+		       var IsBy = $.idcode.validateCode()  //调用返回值，返回值结果为true或者false
+		        if(IsBy){
+		            alert("验证码输入正确")
+		        }else {
+		            alert("请重新输入")
+		        }
+		       
+   			 })
+		});	
+		var oCheck =document.getElementById("savePwd");
+	 	var oUsername = document.getElementById("username");
+	 	var oPassword = document.getElementById("password");
+		//cookie读取
+		   var username = getCookie("username");
+		   var password = getCookie("password");
+		
+			if (username && password)
+			{
+				oUsername.value = username;
+				oPassword.value = password;
+				
+				alert("刷新页面成功！");
+			 }
+			
+		
+		   oCheck.onblur=function(e){
+		 e= e|| window.event;
+		 if (oCheck.checked)
+		{
+			var strUsername = oUsername.value;
+			var strPassword = oPassword.value;
+			addCookie("username", strUsername, 10);
+			addCookie("password", strPassword, 10);
+		}
+
+		alert("已保存您的用户信息");
+	   }
+		 
+		 	function getCookie(name)
+		{
+			
+			var str = document.cookie;
+
+			
+			var arr = str.split("; ");
+			6
+
+			for (var i = 0; i < arr.length; i++)
+			{
+				var arr2 = arr[i].split("=");
+
+				
+				
+				if (arr2[0] == name)
+				{
+					// 说明找到 cookie, 
+					// 返回当前 cookie 所对应的值
+					return arr2[1];
+				}
+			}
+
+			
+			return "";
+		}
+		
+			function addCookie(name, val, day)
+		{
+			var oDate = new Date();
+
+			oDate.setDate(oDate.getDate() + day);
+
+			document.cookie = ""+name+"="+val+";expires=" + oDate;
+		}
+		
+	
+		</script>
+
+        
+	</body>
+</html>

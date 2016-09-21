@@ -1,0 +1,107 @@
+/*商品详情页*/
+.sub{border-bottom:solid 2px #e80d1e;margin-bottom: 1px;}
+.good_middle{width: 100%;}
+.good_middle .infoNav{width: 1210px;margin: 0  auto; }
+.good_middle .infoNav P{font-size:12px ;line-height:38px ;}
+.good_middle .infoIndexcon{width: 1210px;height:350px;margin: 0  auto;}
+.good_middle .infoIndexcon .mousetrap{width:348px;height:348px  ; border:solid 1px #d6d6d6 ;}
+.good_middle .infoIndexcon .mousetrap img{ width:348px ;height:348px; }
+.good_middle .infoIndexcon .text{width:842px ;height: 301px; padding-left: 17px;}
+.good_middle .infoIndexcon .text .tit{height: 24px; font-size:24px;}
+.good_middle .infoIndexcon .text .info{height: 15px;background:url(img/goodS/good_pg.jpg) repeat-x bottom;width:842px }
+.good_middle .infoIndexcon .text .infoList{height: 90px; width: 842px; padding:6px 0 ;background:url(img/goodS/good_pg.jpg) repeat-x bottom;width:842px }
+.good_middle .infoIndexcon .text .infoList li{height:30px ;font-size:14px;line-height:30px ; color:#666666 ;}
+.good_middle .infoIndexcon .text .infoList li strong{font-weight: bold;}
+.good_middle .infoIndexcon .text .price{width:842px ;height:51px ;font-size:14px ; line-height: 51px;color:#666666 ;font-weight: bold;background:url(img/goodS/good_pg.jpg) repeat-x bottom; }
+.good_middle .infoIndexcon .text .price strong{font-weight: bold;color:#c71102 ;}
+.good_middle .infoIndexcon .text .boxs{float:left;width:120px;height: 59px; display:table;}
+.good_middle .infoIndexcon .text .boxs  span{display:table-cell ;vertical-align: middle;color:#666666 ;font-weight: bold;}
+.good_middle .infoIndexcon .text .boxs input{width:52px;height:28px;margin:12.5px 0 ; }
+.good_middle .infoIndexcon .text .jiajian .jia{width:16px ;height:17px ; background:url(img/goodS/btn5.jpg);margin-top: 12.5px;}
+.good_middle .infoIndexcon .text .jiajian .jian{width:16px ;height:17px ;background:url(img/goodS/btn6.jpg);}
+.good_middle .infoIndexcon .text .num{width:842px ;height: 60px;background:url(img/goodS/good_pg.jpg) repeat-x bottom;}
+.good_middle .infoIndexcon .buy{width: 842px; height:29px;padding-top:20px ;}
+.good_middle .infoIndexcon .buy a{height:29px; width:88px ;font-size:14px ;line-height:29px ; }
+.good_middle .infoIndexcon .buy #buynow{ display:inline-block;margin:0 25px ;height:29px; width:88px ;font-weight: bold; color: #D6D6D6; 
+                                       background:url(img/btn1.jpg) no-repeat center;text-align: center; }
+.good_middle .infoIndexcon .buy #buycar{ display:inline-block;height:29px; width:88px ; color: #D6D6D6; 
+                                       background:url(img/goodS/btn1b.jpg) no-repeat center;text-align: center; }
+.good_middle .infoIndexcon .buy #cellect{ display:inline-block;margin:0 5px ;height:29px; width:88px ; color: #D6D6D6; 
+                                       background:url(img/goodS/btn1b.jpg) no-repeat center;text-align: center; }
+.good_middle .infoNav  .btn{width:350px ;height:49px ; padding-top: 10px;}                                       
+.good_middle .infoNav  .btnZ{width:15px;height: 49px;}
+.good_middle .infoNav  .poto{width:47px ;height:47px ;margin:0 5px ; border:solid 1px #d3d3d3 ;}                                 
+.good_middle .infoNav  .share{width:350px ; height:16px ;margin:4px 0; }
+.good_middle .infoNav  .share img{width:16px ;height:14px ; }
+.good_middle .infoNav  .share span {height:16px ; line-height: 16px;margin-left:8px ;color: #000000;} 
+.good_middle .infoNav  .share strong { display:inline-block;font-weight: bold;height:16px ; line-height: 16px;margin-left:4px ;color:#4a42d3 ;} 
+/* 左侧列表页*/
+.integration{ width:219px;}
+
+.integrationMain{ width:985px; overflow:hidden; position:relative;}
+
+.integration .integrationLeftList{ width:217px; overflow:hidden; border:1px solid #e0e0e0; margin-top:10px;}
+
+.integration .integrationLeftList dt{ height:30px; line-height:30px; padding-left:18px; background-color:#f6f6f6; font-weight:bold; font-size:14px; color:#5e5e5e;}
+
+.integration .integrationLeftList dd{ border-bottom:1px solid #f6f6f6; padding:0 15px 15px 15px;}
+
+.integration .integrationLeftList dd .img{ width:180px; height:auto; margin:10px auto; overflow:hidden; display:block; }
+
+.integration .integrationLeftList dd .title{ text-align:justify; display:block; line-height:21px; color:#5e5e5e;}
+
+.integration .integrationLeftList dd .title:link,.integration .integrationLeftList dd .title:visited{ color:#5e5e5e;}
+
+.integration .integrationLeftList dd .price{ padding:5px 0; color:#ea2c2c; font-weight:bold;}
+
+.integration .integrationLeftList2{ width:217px; overflow:hidden; border:1px solid #e0e0e0; margin-top:10px;}
+
+.integration .integrationLeftList2 dt{ height:30px; line-height:30px; padding-left:18px; background-color:#f6f6f6; font-weight:bold; font-size:14px; color:#5e5e5e;}
+
+.integration .integrationLeftList2 dd{ padding-bottom:10px; border-bottom:1px solid #f6f6f6; float:left;}
+
+.integration .integrationLeftList2 dd .img{ width:60px; height:60px; margin:20px 0 0 13px; overflow:hidden; float:left;}
+
+.integration .integrationLeftList2 dd .title{ text-align:justify; width:120px; float:left; margin:16px 0 0 8px; line-height:21px; color:#5e5e5e; overflow:hidden;}
+
+.integration .integrationLeftList2 dd .title:link,.integration .integrationLeftList dd .title:visited{ color:#5e5e5e;}
+
+.integration .integrationLeftList2 dd .price{ padding:5px 0 0 8px; display:inline-block; color:#ea2c2c; font-weight:bold;} 
+
+
+/*右侧*/
+.infoIndeMain{ width:983px; line-height:26px; color:#333; overflow:hidden; float:right;}
+
+.infoIndeMain img{ display:block; margin:0 auto;}
+
+.infoIndeMain .tabTit{ height:28px; border-bottom:1px solid #c5c5c5;}
+
+.infoIndeMain .tabTit li{ float:left; height:28px; padding:0 20px; font-weight:bold; text-align:center; line-height:28px; color:#414141; font-size:14px;}
+
+.infoIndeMain .tabTit li.hover{ background-color:#000; color:#fff;}
+
+.infoIndeMain .context{ padding:5px 0; text-align:justify;}
+
+.infoIndeMain .infoTit{ width:983px; height:34px; background-color:#e70012; line-height:34px; font-weight:bold; font-size:14px; margin:30px 0 45px 0;}
+
+.infoIndeMain .infoTit span{ float:left; height:34px; padding:0 35px; background-color:#ee4a57; color:#fff; text-align:center;}
+
+.indexListBanner{position:relative;}
+
+.hid{display:none;}
+
+.commnet{margin:20px 0 30px;padding:8px 0 0 8px;background:url(../images/commnet_bg.png) repeat-x;border:1px solid #ccc;border-radius:3px;}
+.commnet textarea{width:100%;height:59px;border:none;background:transparent;outline:none;font-size:14px;color:#999;overflow:auto;}
+.commnet .toolbar{padding-top:8px;_padding-top:5px;*padding-top:5px!important;height:30px;line-height:30px;overflow:hidden;}
+.commnet .options{float:left;}
+.commnet .button,
+.commnet .button_on{float:right;width:100px;height:30px;border:none;border-left:1px solid #ccc;font-size:14px;font-weight:bold;cursor:pointer;}
+.commnet .button{background:url(../images/commnet_btn_bg.png) repeat-x;}
+.commnet .button_on{background:url(../images/commnet_btnon_bg.png) repeat-x;}
+.commlist{margin-top:20px;}
+.commlist li{border-bottom:1px solid #eaeaea;word-wrap:break-word;}
+.commlist li p{line-height:20px;color:#999；}
+.commlist li span.uname{color:#D32;font-family:Verdana;font-weight:bold;}
+.commlist li span.time{color:#bbb;}
+.commnum span{display:inline-block;width:70px;margin-top:20px;line-height:24px;border:1px solid #ccc;background:#f5f5f5;border-radius:3px;text-align:center;}
+.commnum span i{color:#900;font-family:Verdana;font-weight:bold;}                                      

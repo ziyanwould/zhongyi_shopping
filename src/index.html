@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>中一办公商城</title>
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<script type="text/javascript" src="js/jquery-1.12.0.js" ></script>
+		<!--
+        	/*主页轮播图*/
+        -->
+		<script>
+			
+		    var i = -1;
+		    var time=0;//设置定时器
+		    var j = -1;
+		    var time1=0;
+		    
+		    
+			$(function(){
+				
+			junmper();//调用跳转程序						
+			time=setInterval("junmper()",2000);//调用程序
+			
+				$(".btn").on('click','li',function(){//点击时候跳转回对应方块下标，并且赋值给i，跳转，继续轮播
+				i=$(this).index();
+				content();			
+				})
+				
+				$(".banner").hover(function(){//当鼠标移动到图片时候，停止轮播，移开图片时候，继续轮播
+					clearInterval(time);
+				},function(){
+					time=setInterval("junmper()",2000);
+				})
+				
+			junmper1();//调用跳转程序						
+			time1=setInterval("junmper1()",2000);//调用程序	
+			
+			
+			//列表栏
+			$('.indexList').on('mouseenter','li',function(){
+				// $(this).next('.content').show(2000).siblings('.content').hide(2000);
+ 				self=$(this).index();
+ 				
+ 				$('.indexListWrapP .con').eq(self).slideDown().siblings('.con').slideUp();
+ 			    
+ 				console.log(self);
+			})	
+
+			$('.indexListBanner').mouseleave(function(){
+				$('.indexListWrapP  .con').hide();
+			})
+				
+		
+			//滑动选择栏
+			$('.featuredProducts .tit').on('mouseenter','li',function(){
+				// $(this).next('.content').show(2000).siblings('.content').hide(2000);
+ 				first=$(this).index();
+ 				$('.featuredProducts .tit li').eq(first).addClass("hover").siblings().removeClass("hover");
+ 				$(".featuredProducts .textList").eq(first).fadeIn(100).siblings(".featuredProducts .textList").fadeOut(100);
+ 				//$('.indexListWrapP .con').eq(first).slideDown().siblings('.con').slideUp();
+ 			    
+ 				console.log(first);
+			})
+				
+				
+			})
+			
+			function junmper(){//设置跳转程序，设置定时器每隔3.7秒完成一张图的动画，当轮播完后把i重置
+					i++;
+					if(i>4)//可省略{}
+					i=0;
+					content();
+			
+				}
+			function junmper1(){
+				    j++;
+				    if(j>3)
+				    j=0;
+				    content1()
+			}
+			
+			function content(){//设置显示效果函数
+					    $(".btn li").eq(i).addClass("hover").siblings().removeClass("hover");//添加导航栏的移动到对应地方的样式，和清除其他样式
+						$(".list li").eq(i).fadeIn(100).siblings().fadeOut(100);//加上淡入淡出的动画效果
+					
+				}
+			function content1(){
+				        $(".wrap li").eq(i).slideDown().siblings().slideUp();
+			}
+		</script>
+			
+		
+		
+    </head>
+	<body>
+		<div class="indexTop">
+	    <div class="wrap">
+		    <a class="collect left" href="#">收藏中一办公</a>
+		    <div class="con right">
+			    <font color="#666666">您好，欢迎来到中一办公&nbsp;！</font> 				
+			    <a class="dlzc" href="html/landing.html">请登录</a>
+			    |<a class="dlzc" href="html/register.html" >免费注册</a>
+				|<a href="#">我的订单</a>|<a class="my" href="#">我的中一</a>
+				|<a class="my" href="#">帮助中心</a>
+				|<a href="#" >在线客服</a>|<font color="#666666">&nbsp;&nbsp;010-67266715</font>
+		    </div>
+	    </div>
+        </div>
+
+<!--头部-->
+	<header style="width:100%;" class="sub">
+		<div style="width:1210px; margin:0 auto;" class="wrap">
+			<h1 class="logo left"><a href="#">中一办公</a></h1>
+			<div style=" margin-left:207px;" class="serach left">
+	            <form name="search" id="search" method="get" action="#">
+	            	<input class="txt left" type="text" placeholder="请输入商品或商家" value="" name="goods_s">
+	            	<input class="btn left" type="submit" value="" name="">
+	            	
+	            </form>
+	            
+				<p class="text">热门搜索：    			
+					<a href="#">硒鼓</a>
+					<a href="#">墨盒</a>
+					<a href="#">白板</a>
+					<a href="#">复印纸</a>
+				</p>
+			</div>
+			<div style="margin-right:41px;" class="shopCar right">
+				<a href="html/shoppingCart.html">去购物车结算</a>
+				<span class="num">1</span>
+			</div>
+			<div class="clear"></div>
+	    <nav class="nav left">
+			<dl>
+			    <dt>
+			    	<span>所有商品分类</span>						
+				</dt>
+				<dd><a href=nav>首　页</a>
+					<ul class="nav_sub"></ul>
+				</dd>
+				<dd>
+					<a href=nav>品牌专区</a>
+					<ul class="nav_sub"></ul>
+				</dd>
+				<dd><a href=#>优惠特价</a>
+					<ul class="nav_sub"></ul>
+				</dd>
+				<dd>
+					<a href="#">积分兑换</a>
+					<ul class="nav_sub"></ul>
+				</dd>
+				<dd>
+					<a href="#">快速订单</a>
+					<ul class="nav_sub"></ul>
+				</dd>			
+			</dl>
+	    </nav>
+			<div class="topScroll right">
+				<div class="con">
+					<div class="wrap" >
+						<ul>
+				     	<li><a href="#"><img src="img/index_img/1393169096.jpg" width="135" height="35" ></a></li>
+					    <li><a href="#"><img src="img/index_img/1393174338.jpg" width="135" height="35" ></a></li>
+					    <li><a href="#"><img src="img/index_img/1393166166.jpg" width="135" height="35" ></a></li>
+						</ul>
+					</div>
+				</div>
+				<span class="top"></span>
+				<span class="bom"></span>
+			</div>
+		</div>
+	</header>
+	
+	<section class="main">
+	<!--
+    	主体部分
+    -->
+    <div class="indexListBanner">
+    	<div class="indexListWrapP left">    	
+			<ul class="indexList">
+				<li><a href="#">办公用纸/打印耗材</a></li>
+				<li><a href="#">办公文具</a></li>
+				<li><a href="#">办公设备</a></li>
+				<li><a href="#">电脑/通讯/数码</a></li>
+				<li><a href="#">生活日用</a></li>
+				<li><a href="#">办公家具</a></li>
+				<li><a href="#">体育/美术用品</a></li>
+				<li><a href="#">礼品订制</a></li>
+		    </ul>		 
+		    
+		    
+		    <div class="con" id="con1" style="display: none;">
+				<div class="goods_con_a">
+			    	<div class="box">
+				        <hgroup class="tit">办公用纸</hgroup>
+					        <ul>
+     							<li><a href="#">复印纸</a></li>
+								<li><a href="#">传真纸</a></li>
+								<li><a href="#">电脑打印纸</a></li>
+								<li><a href="#">彩喷纸相片纸</a></li>
+								<li><a href="#">标贴打印纸</a></li>
+								<li><a href="#">收银纸/标价纸</a></li>
+								<li><a href="#">彩色复印纸</a></li>
+								<li><a href="#">绘图纸</a></li>
+								<li><a href="#">工程纸</a></li>
+								<li><a href="#">草图纸/硫酸纸</a></li>
+								<li><a href="#">铜版纸/白卡纸</a></li>
+								<li><a href="#">彩激纸</a></li>
+						</ul>
+				    </div>
+					 <div class="box">
+					    <hgroup class="tit">墨盒</hgroup>
+							<ul>
+     							<li><a href="#">惠普（HP）墨盒</a></li>
+								<li><a href="#">佳能（canon）墨盒</a></li>
+								<li><a href="#">爱普生（EPSON）墨盒</a></li>
+								<li><a href="#">兄弟（brother）墨盒</a></li>
+								<li><a href="#">三星（SAMSUNG）墨盒</a></li>
+						</ul>
+				    </div>
+					<div class="box">
+						<hgroup class="tit">硒鼓</hgroup>
+							<ul>
+     							<li><a href="#">惠普（HP）硒鼓</a></li>
+								<li><a href="#">佳能（canon）硒鼓</a></li>
+								<li><a href="#">爱普生（EPSON）硒鼓</a></li>
+								<li><a href="#">三星（SAMSUNG）硒鼓</a></li>
+								<li><a href="#">兄弟（brother）硒鼓</a></li>
+								<li><a href="#">联想（lenovo）硒鼓</a></li>
+								<li><a href="#">松下（panasonic）硒鼓</a></li>
+								<li><a href="#">富士施乐（Fuji Xerox）硒鼓</a></li>
+								<li><a href="#">其它品牌硒鼓</a></li>
+							</ul>
+					</div>
+					<div class="box">
+						<hgroup class="tit">墨粉</hgroup>
+							<ul>
+     							<li><a href="#">兄弟（brother）墨粉</a></li>
+								<li><a href="#">联想（lenovo）墨粉</a></li>
+								<li><a href="#">佳能（canon）墨粉</a></li>
+								<li><a href="#">夏普（SHARP）墨粉</a></li>
+								<li><a href="#">东芝（TOSHIBA）墨粉</a></li>
+								<li><a href="#">松下（panasonic）墨粉</a></li>
+								<li><a href="#">富士施乐（Fuji Xerox）墨粉</a></li>
+								<li><a href="#">理光（RICOH）墨粉</a></li>
+								<li><a href="#">柯尼卡美能达墨粉</a></li>
+								<li><a href="#">京瓷（kyocera）墨粉</a></li>
+								<li><a href="#">三星（SAMSUNG）墨粉</a></li>
+						</ul>
+					</div>
+					<div class="box">
+						<hgroup class="tit">色带/碳带</hgroup>
+							<ul>
+     							<li><a href="#">爱普生（EPSON）色带</a></li>
+								<li><a href="#">传真机碳带</a></li>
+								<li><a href="#">标签机色带</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="goods_con_b">
+					<dl>
+						<dt>推荐品牌</dt>
+						 
+						<dd><a href="#">鑫乐</a></dd>
+						 
+						<dd><a href="#">高品乐</a></dd>
+						 
+						<dd><a href="#">百旺</a></dd>
+						 
+						<dd><a href="#">旗舰</a></dd>
+						 
+						<dd><a href="#">Doublea A</a></dd>
+						 
+						<dd><a href="#">佳印</a></dd>
+						 
+						<dd><a href="#">通立莱</a></dd>
+						 
+						<dd><a href="#">联想（lenovo）</a></dd>
+						 
+						<dd><a href="#">松下</a></dd>
+						 
+						<dd><a href="#">富士施乐</a></dd>
+						 
+						<dd><a href="#">夏普（SHARP）</a></dd>
+						 
+						<dd><a href="#">东芝</a></dd>
+						 
+						<dd><a href="#">理光（Ricoh）</a></dd>
+						 
+						<dd><a href="#">京瓷（kyocera）</a></dd>
+						 
+						<dd><a href="#">卡西欧</a></dd>
+					</dl>
+				</div>
+			</div>
+						
+			<div class="con" id="con2" style="display: none;">
+				<div class="goods_con_a">
+    				<div class="box">
+						<hgroup class="tit">书写工具</hgroup>
+							<ul>
+     							<li><a href="#">签字笔</a></li>
+								<li><a href="#">圆珠笔/台笔</a></li>
+								<li><a href="#">笔芯</a></li>
+								<li><a href="#">记号笔</a></li>
+								<li><a href="#">白板笔</a></li>
+								<li><a href="#">荧光笔</a></li>
+								<li><a href="#">油漆笔/唛克笔</a></li>
+								<li><a href="#">铅笔/自动铅笔/铅芯</a></li>
+								<li><a href="#">绘图笔</a></li>
+								<li><a href="#">粉笔</a></li>
+								<li><a href="#">墨水/墨汁</a></li>
+								<li><a href="#">毛笔</a></li>
+								<li><a href="#">笔袋</a></li>
+								<li><a href="#">水彩笔/油画棒</a></li>
+						</ul>
+					</div>
+					<div class="box">
+						<hgroup class="tit">文件存储</hgroup>
+							<ul>
+     							<li><a href="#">资料册</a></li>
+								<li><a href="#">文件夹</a></li>
+								<li><a href="#">孔形文件夹</a></li>
+								<li><a href="#">档案盒</a></li>
+								<li><a href="#">档案快劳夹</a></li>
+								<li><a href="#">文件袋/文件套</a></li>
+								<li><a href="#">11孔文件保护袋</a></li>
+								<li><a href="#"> 抽杆夹</a></li>
+								<li><a href="#">旋转夹/报告夹</a></li>
+								<li><a href="#">电脑夹/票据夹</a></li>
+								<li><a href="#">写字板夹</a></li>
+								<li><a href="#">事务包/风琴包</a></li>
+								<li><a href="#">吊挂快劳及附件</a></li>
+								<li><a href="#">分类索引</a></li>
+								<li><a href="#">纸质文件夹/盒</a></li>
+						</ul>
+					</div>
+					<div class="box">
+						<hgroup class="tit">桌面用品</hgroup>
+							<ul>
+     							<li><a href="#">计算器</a></li>
+								<li><a href="#">订书机/起钉器</a></li>
+								<li><a href="#">订书钉</a></li>
+								<li><a href="#">打孔器</a></li>
+								<li><a href="#">笔筒</a></li>
+								<li><a href="#">名片册/名片盒</a></li>
+								<li><a href="#">回形针/大头针/图钉</a></li>
+								<li><a href="#">便签纸/盒</a></li>
+								<li><a href="#">书立</a></li>
+								<li><a href="#">文件栏</a></li>
+								<li><a href="#">文件盘</a></li>
+								<li><a href="#">文件柜</a></li>
+								<li><a href="#">胶带座</a></li>
+								<li><a href="#"> 转笔刀/削笔器</a></li>
+								<li><a href="#">推夹器/推夹钉</a></li>
+						</ul>
+					</div>
+					<div class="box">
+						<hgroup class="tit">辅助用品</hgroup>
+							<ul>
+     							<li><a href="#">胶水/胶棒</a></li>
+								<li><a href="#">修正带/修正液</a></li>
+								<li><a href="#">长尾夹/白钢夹</a></li>
+								<li><a href="#">剪刀</a></li>
+								<li><a href="#">美工刀</a></li>
+								<li><a href="#">尺类</a></li>
+								<li><a href="#">皮筋/橡皮</a></li>
+								<li><a href="#">胶条/胶带</a></li>
+								<li><a href="#">双面胶/美纹纸</a></li>
+								<li><a href="#">封箱器</a></li>
+								<li><a href="#"> 装订原子夹</a></li>
+								<li><a href="#">切纸刀</a></li>
+								<li><a href="#">书写垫板</a></li>
+								<li><a href="#"> 测绘工具</a></li>
+						</ul>
+					</div>
+					<div class="box">
+						<hgroup class="tit">财务用品</hgroup>
+							<ul>
+     							<li><a href="#">印台/印油</a></li>
+								<li><a href="#">凭证表单/凭证盒/封面</a></li>
+								<li><a href="#"> 帐本/帐页</a></li>
+								<li><a href="#">收据/出入库</a></li>
+								<li><a href="#">牛皮纸档案袋</a></li>
+								<li><a href="#">口取纸/复写纸</a></li>
+								<li><a href="#">支票夹</a></li>
+								<li><a href="#">自动号码机</a></li>
+								<li><a href="#">财务用章</a></li>
+								<li><a href="#">印章盒、垫/手提金库</a></li>
+								<li><a href="#"> 海绵缸</a></li>
+								<li><a href="#">财务装订附件</a></li>
+						</ul>
+					</div>
+					<div class="box">
+						<hgroup class="tit">本簿系列</hgroup>
+							<ul>
+     							<li><a href="#">胶装笔记本</a></li>
+								<li><a href="#">线圈笔记本</a></li>
+								<li><a href="#"> 仿皮笔记本</a></li>
+								<li><a href="#">硬皮笔记本</a></li>
+								<li><a href="#">活页本/活页芯</a></li>
+								<li><a href="#">商务帖/指示标贴</a></li>
+								<li><a href="#">手写标贴</a></li>
+								<li><a href="#">信纸/信封</a></li>
+								<li><a href="#">红包/请柬/贺卡</a></li>
+								<li><a href="#">证书/聘书/奖状</a></li>
+								<li><a href="#"> 嘉宾签到簿</a></li>
+						</ul>
+					</div>
+					<div class="box">
+					   	<hgroup class="tit">会议及展示</hgroup>
+							<ul>
+     							<li><a href="#">白板</a></li>
+								<li><a href="#"> 软木板</a></li>
+								<li><a href="#">白板附件</a></li>
+								<li><a href="#">报刊架/杂志架</a></li>
+								<li><a href="#">胸卡/挂绳</a></li>
+								<li><a href="#">会议桌牌/台卡</a></li>
+								<li><a href="#">标识标牌</a></li>
+								<li><a href="#">硬质卡片袋</a></li>
+								<li><a href="#">镜框</a></li>
+								<li><a href="#">地图/地球仪</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="goods_con_b">
+					<dl>
+						<dt>推荐品牌</dt>
+						 
+						<dd><a href="#">得力</a></dd>
+						 
+						<dd><a href="#">晨光</a></dd>
+						 
+						<dd><a href="#">齐心</a></dd>
+						 
+						<dd><a href="#">益尔高</a></dd>
+						 
+						<dd><a href="#">三菱</a></dd>
+						 
+						<dd><a href="#">华杰</a></dd>
+						 
+						<dd><a href="#">中华</a></dd>
+						 
+						<dd><a href="#">富得快</a></dd>
+						 
+						<dd><a href="#">高的</a></dd>
+						 
+						<dd><a href="#">三工</a></dd>
+						 
+						<dd><a href="#">成文厚</a></dd>
+						 
+						<dd><a href="#">斑马</a></dd>
+						 
+						<dd><a href="#">百乐</a></dd>
+						 
+						<dd><a href="#">金万年</a></dd>
+						 
+						<dd><a href="#">晨奇</a></dd>
+						 
+						<dd><a href="#">钊盛</a></dd>
+						 
+						<dd><a href="#">吉利发</a></dd>
+						 
+						<dd><a href="#">豪桦利</a></dd>
+						 
+						<dd><a href="#">3M</a></dd>
+						 
+						<dd><a href="#">旗文(STD)</a></dd>
+						 
+						<dd><a href="#">美克司(MAX)</a></dd>
+					</dl>
+				</div>
+			</div>
+						
+			<div class="con" id="con3" style="display: none;">
+				<div class="goods_con_a">
+    				<div class="box">
+						<hgroup class="tit">复印机/传真机</hgroup>
+							<ul>
+     							<li><a href="#">复印机</a></li>
+								<li><a href="#">传真机</a></li>
+						</ul>
+					</div>
+					<div class="box">
+						<hgroup class="tit">打印设备</hgroup>
+						 	<ul>
+	 							<li><a href="#">打印机</a></li>
+								<li><a href="#">一体机</a></li>
+								<li><a href="#">针式打印机</a></li>
+								<li><a href="#">标签打印机/色带</a></li>
+								<li><a href="#">扫描仪</a></li>
+						</ul>
+					</div>
+					<div class="box">
+						<hgroup class="tit">财务行政设备</hgroup>
+							<ul>
+     							<li><a href="#">考勤机 </a></li>
+								<li><a href="#">点钞/验钞机</a></li>
+								<li><a href="#">支票打印机</a></li>
+								<li><a href="#">装订机</a></li>
+								<li><a href="#">标价机</a></li>
+								<li><a href="#">封口机</a></li>
+						</ul>
+					</div>
+					<div class="box">
+						<hgroup class="tit">印后处理设备</hgroup>
+							<ul>
+     							<li><a href="#">碎纸机</a></li>
+								<li><a href="#">塑封机</a></li>
+								<li><a href="#">切纸机 </a></li>
+						</ul>
+					</div>
+					<div class="box">
+						<hgroup class="tit">装订塑封耗材</hgroup>
+							<ul>
+     							<li><a href="#">装订封面 /皮纹纸</a></li>
+								<li><a href="#"> 装订胶片</a></li>
+								<li><a href="#">装订胶圈、铁圈</a></li>
+								<li><a href="#">装订夹条、钉条</a></li>
+								<li><a href="#">装订铆管、钻刀</a></li>
+								<li><a href="#">热熔封套</a></li>
+								<li><a href="#">塑封膜</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="goods_con_b">
+					<dl>
+						<dt>推荐品牌</dt>
+						 
+						<dd><a href="#">兄弟</a></dd>
+						 
+						<dd><a href="#">佳能</a></dd>
+						 
+						<dd><a href="#">HP</a></dd>
+						 
+						<dd><a href="#">科密</a></dd>
+						 
+						<dd><a href="#">康艺</a></dd>
+						 
+						<dd><a href="#">普霖</a></dd>
+						 
+						<dd><a href="#">云广</a></dd>
+					</dl>
+				</div>
+			</div>
+						
+			<div class="con" id="con4" style="display: none;">
+				<div class="goods_con_a">
+    				<div class="box">
+						<hgroup class="tit">电脑整机</hgroup>
+							<ul>
+     							<li><a href="#">笔记本</a></li>
+								<li><a href="#">台式机</a></li>
+								<li><a href="#">一体机</a></li>
+							</ul>
+						</div>
+					<div class="box">
+						<hgroup class="tit">存储介质</hgroup>
+							<ul>
+     							<li><a href="#">刻录光盘</a></li>
+								<li><a href="#">U盘</a></li>
+								<li><a href="#">移动硬盘</a></li>
+								<li><a href="#">存储卡</a></li>
+						</ul>
+					</div>
+					<div class="box">
+						<hgroup class="tit">电脑周边</hgroup>
+							<ul>
+     							<li><a href="#">鼠标</a></li>
+								<li><a href="#">键盘</a></li>
+								<li><a href="#">摄像头/散热器</a></li>
+								<li><a href="#">耳机/耳麦</a></li>
+								<li><a href="#">HUB/读卡器</a></li>
+								<li><a href="#">音响/麦克风</a></li>
+								<li><a href="#"> 鼠标垫</a></li>
+								<li><a href="#">电脑清洁</a></li>
+								<li><a href="#">光盘存储</a></li>
+								<li><a href="#">线缆</a></li>
+								<li><a href="#">布线工具</a></li>
+								<li><a href="#">插座/接线板</a></li>
+						</ul>
+					</div>
+					<div class="box">
+						<hgroup class="tit">通讯/数码</hgroup>
+							<ul>
+     							<li><a href="#">电话机</a></li>
+								<li><a href="#">对讲机</a></li>
+								<li><a href="#">录音笔</a></li>
+								<li><a href="#">激光笔/翻页笔</a></li>
+						</ul>
+					</div>
+					<div class="box">
+						<hgroup class="tit">网络产品</hgroup>
+							<ul>
+     							<li><a href="#">路由器</a></li>
+								<li><a href="#">交换机</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="goods_con_b">
+					<dl>
+						<dt>推荐品牌</dt>
+						 
+						<dd><a href="#">公牛</a></dd>
+						 
+						<dd><a href="#">突破</a></dd>
+						 
+						<dd><a href="#">可来博</a></dd>
+						 
+						<dd><a href="#">清华同方</a></dd>
+						 
+						<dd><a href="#">紫光</a></dd>
+						 
+						<dd><a href="#">索尼</a></dd>
+						 
+						<dd><a href="#">双飞燕</a></dd>
+						 
+						<dd><a href="#">罗技</a></dd>
+						 
+						<dd><a href="#">TP-LINK</a></dd>
+						 
+						<dd><a href="#">金士顿</a></dd>
+					</dl>
+				</div>
+			</div>
+						
+			<div class="con" id="con5" style="display: none;">
+				<div class="goods_con_a">
+    				<div class="box">
+						<hgroup class="tit">小家电</hgroup>
+							<ul>
+     							<li><a href="#">电水壶</a></li>
+								<li><a href="#">饮水机</a></li>
+								<li><a href="#">微波炉</a></li>
+								<li><a href="#">电风扇</a></li>
+								<li><a href="#">吸尘器</a></li>
+						</ul>
+					</div>
+					<div class="box">
+						<hgroup class="tit">日常用品</hgroup>
+							<ul>
+     							<li><a href="#">电池/充电器</a></li>
+								<li><a href="#">钟表</a></li>
+								<li><a href="#">锁具/钥匙圈/扣/箱</a></li>
+								<li><a href="#">投诉/意见箱</a></li>
+								<li><a href="#">小拉车/梯子/货架</a></li>
+								<li><a href="#">暖水壶/杯子/托盘</a></li>
+								<li><a href="#">粘钩/衣架</a></li>
+								<li><a href="#">晴雨伞/雨鞋</a></li>
+								<li><a href="#">灯具照明</a></li>
+								<li><a href="#">温湿度计</a></li>
+								<li><a href="#">烟灰缸</a></li>
+								<li><a href="#">手套/口罩/鞋套</a></li>
+								<li><a href="#">捆扎绳/扎带</a></li>
+								<li><a href="#">整理箱</a></li>
+								<li><a href="#">喊话/扩音器 </a></li>
+								<li><a href="#">维修工具</a></li>
+							</ul>
+					</div>
+					<div class="box">
+						<hgroup class="tit">清洁用品</hgroup>
+							<ul>
+     							<li><a href="#">厨卫清洁</a></li>
+								<li><a href="#">衣物洗涤</a></li>
+								<li><a href="#">香皂/洗手液</a></li>
+								<li><a href="#">个人洗护</a></li>
+								<li><a href="#">清洁工具</a></li>
+								<li><a href="#">家居护理</a></li>
+						</ul>
+					</div>
+					<div class="box">
+						<hgroup class="tit">生活日用</hgroup>
+							<ul>
+     							<li><a href="#">卫生用纸</a></li>
+								<li><a href="#"> 纸杯/塑料杯</a></li>
+								<li><a href="#">一次性用品</a></li>
+								<li><a href="#">杀虫/驱蚊</a></li>
+								<li><a href="#">空气清新</a></li>
+								<li><a href="#">垃圾袋</a></li>
+								<li><a href="#">手提袋/超市连卷袋</a></li>
+								<li><a href="#">自封袋/玻璃袋</a></li>
+						</ul>
+					</div>
+					<div class="box">
+						<hgroup class="tit">食品饮料</hgroup>
+							<ul>
+     							<li><a href="#">咖啡/奶茶</a></li>
+								<li><a href="#">饮用水</a></li>
+								<li><a href="#">饮料</a></li>
+								<li><a href="#">方便食品</a></li>
+								<li><a href="#">酒类</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="goods_con_b">
+					<dl>
+						<dt>推荐品牌</dt>
+						 
+						<dd><a href="#">雕牌</a></dd>
+						 
+						<dd><a href="#">金鱼</a></dd>
+						 
+						<dd><a href="#">蓝月亮</a></dd>
+						 
+						<dd><a href="#">碧浪</a></dd>
+						 
+						<dd><a href="#">都洁</a></dd>
+						 
+						<dd><a href="#">维达</a></dd>
+						 
+						<dd><a href="#">清风</a></dd>
+						 
+						<dd><a href="#">心相印</a></dd>
+						 
+						<dd><a href="#">绿保</a></dd>
+					</dl>
+				</div>
+			</div>
+						
+			<div class="con" id="con6" style="display: none;">
+				<div class="goods_con_a">
+    				<div class="box">
+						<hgroup class="tit">存储柜</hgroup>
+							<ul>
+     							<li><a href="#">铁皮文件柜</a></li>
+								<li><a href="#">更衣柜</a></li>
+								<li><a href="#">底图柜</a></li>
+								<li><a href="#">书刊柜</a></li>
+								<li><a href="#">推柜</a></li>
+								<li><a href="#">多屉柜/组合柜</a></li>
+								<li><a href="#">密集柜</a></li>
+						</ul>
+					</div>
+					<div class="box">
+						<hgroup class="tit">保险柜</hgroup>
+							<ul>
+	     							<li><a href="#">保险柜/保管箱</a></li>
+							</ul>
+					</div>
+					<div class="box">
+						<hgroup class="tit">办公桌台</hgroup>
+							<ul>
+     							<li><a href="#">办公桌/电脑桌</a></li>
+								<li><a href="#">班台</a></li>
+								<li><a href="#">会议桌</a></li>
+								<li><a href="#">洽谈桌</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="goods_con_b">
+					<dl>
+						<dt>推荐品牌</dt>
+					</dl>
+				</div>
+			</div>
+						
+			<div class="con" id="con7" style="display: none;">
+				<div class="goods_con_a">
+    				<div class="box">
+						<hgroup class="tit">体育用品</hgroup>
+							<ul>
+     							<li><a href="#">运动服饰</a></li>
+								<li><a href="#">运动鞋包</a></li>
+								<li><a href="#">球类</a></li>
+								<li><a href="#">棋牌麻将</a></li>
+								<li><a href="#">运动护具</a></li>
+								<li><a href="#">户外装备</a></li>
+								<li><a href="#">健身训练</a></li>
+								<li><a href="#">其它</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="goods_con_b">
+					<dl>
+						<dt>推荐品牌</dt>
+					</dl>
+				</div>
+			</div>
+						
+			<div class="con" id="con8" style="display: none;">
+				<div class="goods_con_a">
+    				<div class="box">
+						<hgroup class="tit">文具本册</hgroup>
+					<ul>
+ 					</ul>
+				</div>
+				<div class="box">
+					<hgroup class="tit">礼品套装</hgroup>
+					<ul>
+					</ul>
+				</div>
+				<div class="box">
+					<hgroup class="tit">创意促销</hgroup>
+					<ul>
+ 					</ul>
+				</div>
+				<div class="box">
+					<hgroup class="tit">工艺礼品</hgroup>
+					<ul>
+ 					</ul>
+				</div>
+			</div>
+				<div class="goods_con_b">
+					<dl>
+						<dt>推荐品牌</dt>
+					</dl>
+				</div>
+			</div>
+					
+		 </div>
+							
+    <div class="banner left">
+			<ul class="list">
+				<li style="display: none;">
+					<a href="#"><img src="img/index_img/1463923488.jpg" ></a>
+				</li>
+				<li style="display: none;">
+					<a href="#"><img src="img/index_img/1448357131.jpg"  ></a>
+				</li>
+				<li style="display: list-item;">
+					<a href="#"><img src="img/index_img/1448348713.jpg"></a>
+				</li>
+				<li style="display: none;">
+					<a href="#"><img src="img/index_img/1463923851.jpg" ></a>
+				</li>
+				</ul>
+			<ul class="btn">
+				<li class="">1</li>
+				<li class="">2</li>
+			    <li class="">3</li>
+				<li class="">4</li>
+		    </ul>
+		</div>
+		<div class="prompt right">
+			<ul class="imgList">
+			     				<li><img src="img/index_img/1393162108.jpg" width="85" height="63">满100免运费</li>
+								<li><img src="img/index_img/1393161365.jpg" width="85" height="63">货到付款</li>
+								<li><img src="img/index_img/1393171356.jpg" width="85" height="63">正品保障</li>
+							</ul>
+			<dl class="textList">
+				<dt><a class="more right" href="#">查看更多&gt;&gt;</a>中一公告</dt>
+								<dd><a href="#">办公用品采购技巧</a></dd>
+								<dd><a href="#">办公室礼仪常识</a></dd>
+								<dd><a href="#">白领养生方法 十个小妙招帮白领减轻压力</a></dd>
+							</dl>
+			  			<div class="banner2">
+             	                <a href="#"><img src="img/index_img/1464159012.jpg" width="262" height="89"></a>
+            </div>
+		</div>
+	</div>
+	
+	<!--推荐商品品牌-->
+	<div class="featuredProducts">
+		<div class="tab left">
+			<ul class="tit">
+				<li class="hover"><span>期间特价</span></li>
+				<li class=""><span>人气商品</span></li>
+				<li class=""><span>新品推荐</span></li>
+				<li class=""><span>推荐商品</span></li>
+			</ul>
+			<ul class="textList" style="display: block;">
+　　　  			<li>
+					<a href="#"><img src="img/index_img/1425919568.jpg" ></a>
+					<a class="name" href="#" >国俊众博 1218 B5/18K皮面记事本 74张内芯 仿皮笔记本 黑色 255*...</a>
+					<span class="price" >¥<b>6.50/本</b></span>
+				</li>
+　　				<li>
+					<a href=# ><img src="img/index_img/1434446860.jpg" ></a>
+					<a class="name" href="#" >清华同方 CD-R 特供 50片装 52X 700M刻录盘</a>
+					<span class="price" >¥<b>49.50/筒</b></span>
+				</li>
+　　				<li>
+					<a href=# ><img src="img/index_img/1407122079.jpg"></a>
+					<a class="name" href="#" >益尔高（EAGLE）  A4/3寸7.5CM纸板文件夹9300B</a>
+					<span class="price" >¥<b>10.50/个</b></span>
+				</li>
+				<li>
+					<a href="#" ><img src="img/index_img/1448766416.jpg" ></a>
+					<a class="name" href="#" >顺兴 SX-331 小眼方筐 米罗 文件筐 L310*W230*H80mm</a>
+					<span class="price" >¥<b>4.90/个</b></span>
+				</li>
+　　			</ul>
+			<ul class="textList" style="display: none;">
+　　 			<li>
+					<a href="#"><img src="img/index_img/1413714312.jpg"></a>
+					<a class="name" href="#" >汉高百特 PKA3D小胶水（32ml）</a>
+					<span class="price" >¥<b>2.60/个</b></span>
+				</li>
+				<li>
+					<a href="#" target="_blank"><img src="img/index_img/1432983205.jpg" ></a>
+					<a class="name" href="#" title="利信  W-16原子印油 10ml" target="_blank">利信  W-16原子印油 10ml</a>
+					<span class="price" >¥<b>1.50/瓶</b></span>
+				</li>
+				<li>
+					<a href="#" ><img src="img/index_img/1412851528.jpg" ></a>
+					<a class="name" href="#" >钢制电脑桌LH-Z004(1200*600*760cm)  可放电脑键盘、机箱</a>
+					<span class="price" >¥<b>550.00/张</b></span>
+				</li>
+				<li>
+					<a href="#"><img src="img/index_img/1413713792.jpg" ></a>
+					<a class="name" href="#">南韩  25克胶棒</a>
+					<span class="price" >¥<b>4.50/个</b></span>
+				</li>
+			</ul>
+			<ul class="textList" style="display: none;">
+   				<li>
+					<a href="#" ><img src="img/index_img/1409027708.jpg" ></a>
+					<a class="name" href="#" >成文厚 203-22小号红色口取纸 24*29mm(35枚/张,10张/打)</a>
+					<span class="price" >¥<b>5.00/打</b></span>
+				</li>
+				<li>
+					<a href="#"><img src="img/index_img/1430287653.jpg" ></a>
+					<a class="name" href="#">国产 SA-508 按挚式圆珠笔  0.7mm 蓝色 10支装</a>
+					<span class="price" >¥<b>4.90/袋</b></span>
+				</li>
+				<li>
+					<a href="#"><img src="img/index_img/1431087061.jpg"></a>
+					<a class="name" href="#">晨光(M&amp;G) GP1280 0.5mm物美中性笔 12支/盒</a>
+					<span class="price" >¥<b>10.00/盒</b></span>
+				</li>
+				<li>
+					<a href="#"><img src="img/index_img/1408087149.jpg"></a>
+					<a class="name" href="#">雪奥  80ml塑瓶胶水NO.0104（5瓶装）</a>
+					<span class="price" >¥<b>4.50/条</b></span>
+				</li>
+			</ul>
+			<ul class="textList" style="display: none;">
+   				<li>
+					<a href="#"><img src="img/index_img/1408513533.jpg"></a>
+					<a class="name" href="#">高的 GD301 A4 被罩单强力夹</a>
+					<span class="price" >¥<b>3.90/个</b></span>
+				</li>
+				<li>
+					<a href="#"><img src="img/index_img/1430130504.jpg" ></a>
+					<a class="name" href="#">豪桦利 DF02A 票据夹 48开 240*103*20mm</a>
+					<span class="price" >¥<b>2.50/个</b></span>
+				</li>
+				<li>
+					<a href="#"><img src="img/index_img/1415873522.jpg"></a>
+					<a class="name" href="#">卡西欧（CASIO） MS-20NC  亮彩系列    四色可选   尺寸：...</a>
+					<span class="price" >¥<b>45.00/个</b></span>
+				</li>
+				<li>
+					<a href="#"><img src="img/index_img/1430128771.jpg"></a>
+					<a class="name" href="#">豪桦利 DF03A 票据夹 32开 225*160*20mm</a>
+					<span class="price" >¥<b>2.50/个</b></span>
+				</li>
+			</ul>
+			
+		</div>
+		<div class="imgList right">
+			<h4><a class="more right" href="#">更多&gt;&gt;</a>热销品牌</h4>
+			<dl class="imgList">
+			     				<dd><a href="#"><img src="img/index_img/1393239259.jpg"></a></dd>
+								<dd><a href="#"><img src="img/index_img/1393226123.jpg"></a></dd>
+								<dd><a href="#"><img src="img/index_img/1393229456.jpg"></a></dd>
+								<dd><a href="#"><img src="img/index_img/1393140616.jpg" width="130" height="70"></a></dd>
+								<dd><a href="#"><img src="img/index_img/1393228957.jpg"></a></dd>
+								<dd><a href="#"><img src="img/index_img/1393232361.jpg"></a></dd>
+								<dd><a href="#"><img src="img/index_img/1393229314.jpg"></a></dd>
+								<dd><a href="#"><img src="img/index_img/1393233804.jpg"></a></dd>
+							</dl>
+		</div>
+	</div>
+	<!--
+    	一楼
+    -->
+	<div class="indexShopBox">
+		<dl class="titList">
+			<dt><span>1F</span>办公用纸/打印耗材</dt>
+			<dd class="hover"><a href="#">特价商品</a></dd>
+	 			<dd><a href="#">办公用纸</a></dd>
+	 			<dd><a href="#">墨盒</a></dd>
+	 			<dd><a href="#">硒鼓</a></dd>
+	 			<dd><a href="#">墨粉</a></dd>
+	 			<dd><a href="#">色带/碳带</a></dd>
+	 		</dl>
+		<div class="sub left">
+			<div class="wrap">
+				<dl>
+					<dt>办公用纸</dt>
+					<dd><a href="#">复印纸</a></dd>
+					<dd><a href="#">传真纸</a></dd>
+					<dd><a href="#">电脑打印纸</a></dd>
+					<dd><a href="#">彩喷纸相片纸</a></dd>
+					<dd><a href="#">标贴打印纸</a></dd>
+				</dl>
+
+					<a class="img" ><img src="img/index_img/1409831092.jpg" ></a>
+				
+			</div>
+				<div class="wrap">
+					<dl>
+						<dt>墨盒</dt>
+						<dd><a href="#">惠普（HP）墨盒</a></dd>
+						<dd><a href="#">佳能（canon）墨盒</a></dd>
+						<dd><a href="#">爱普生（EPSON）墨盒</a></dd>
+						<dd><a href="#">兄弟（brother）墨盒</a></dd>
+						<dd><a href="#">三星（SAMSUNG）墨盒</a></dd>
+					</dl>
+
+						<a class="img" href="#"><img src="img/index_img/1409832535.jpg" ></a>
+				
+			</div>
+				<div class="wrap">
+					<dl>
+						<dt>硒鼓</dt>
+						<dd><a href="#">惠普（HP）硒鼓</a></dd>
+						<dd><a href="#">佳能（canon）硒鼓</a></dd>
+						<dd><a href="#">爱普生（EPSON）硒鼓</a></dd>
+						<dd><a href="#">三星（SAMSUNG）硒鼓</a></dd>
+						<dd><a href="#">兄弟（brother）硒鼓</a></dd>
+					</dl>
+
+						<a class="img" href="#"><img src="img/index_img/1409833175.jpg"></a>
+				
+				</div>
+			</div>
+		
+		<ul class="conList left">
+   			<li>
+				<a class="img" href="#"><img src="img/index_img/1407466025.jpg"></a>
+				<h4><ahref="#">三星 SCX-4521D3 黑色硒鼓(适用SCX-4321 4521F...</a></h4>
+				<span class="price">¥568.00/支</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img"href="#"><img src="img/index_img/1408597480.jpg" ></a>
+				<h4><a href="#">高品乐 A4/70g复印纸5包/箱</a></h4>
+				<span class="price">¥98.00/箱</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1407481582.jpg"></a>
+				<h4><a href="#">佳能 FX-9 黑色硒鼓(适用L100 MF4120 4010)</a></h4>
+				<span class="price">¥425.00/支</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1449548063.png"></a>
+				<h4><a href="#">佳能  NPG-28 黑色墨粉 (适用2116J/2120S/2120J...</a></h4>
+				<span class="price">¥168.00/支</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1416296064.jpg"></a>
+				<h4><a href="#">连邦 LB-Q2612JJ(经济型)硒鼓 适用惠普1010/1018...</a></h4>
+				<span class="price">¥75.00/支</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#" ><img src="img/index_img/1448541099.jpg"></a>
+				<h4><a href="#"> 兄弟 DR-2250 黑色硒鼓(适用机型兄弟 7360 2240D 2250DN 7060D </a></h4>
+				<span class="price">¥385.00/支</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1403676796.png"></a>
+				<h4><a href="#">Doublea A 80g/A4/复印纸5包/箱</a></h4>
+				<span class="price">¥138.00/箱</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1407139848.jpg"></a>
+				<h4><a href="#">三星（SAMSUNG）M45 黑色墨盒(适用SF-360 3...</a></h4>
+				<span class="price">¥225.00/个</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1407413831.png"></a>
+				<h4><a href="#">联想 LD2441硒鼓(适用LJ2400 7400 7450F)</a></h4>
+				<span class="price">¥495.00/支</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1428381274.jpg"></a>
+				<h4><a href="#">蓝巨强  A4/70g 复印纸  10包/箱</a></h4>
+				<span class="price">¥158.00/箱</span>
+				
+				
+			</li>			
+		</ul>
+	</div>
+	<!--
+    	二楼
+    -->
+	<div class="indexShopBox">
+		<dl class="titList">
+			<dt><span>2F</span>办公文具</dt>
+			<dd class="hover"><a href="#">特价商品</a></dd>
+	 			<dd><a href="#">书写工具</a></dd>
+	 			<dd><a href="#">文件存储</a></dd>
+	 			<dd><a href="#">桌面用品</a></dd>
+	 			<dd><a href="#">辅助用品</a></dd>
+	 			<dd><a href="#">财务用品</a></dd>
+	 		</dl>
+		<div class="sub left">
+			<div class="wrap">
+				<dl>
+					<dt>办公用纸</dt>
+					<dd><a href="#">签字笔</a></dd>
+					<dd><a href="#">圆珠笔/台笔</a></dd>
+					<dd><a href="#">笔芯</a></dd>
+					<dd><a href="#">记号笔</a></dd>
+					<dd><a href="#">白板笔</a></dd>
+				</dl>
+
+					<a class="img" ><img src="img/index_img/1409899204.jpg" ></a>
+				
+			</div>
+				<div class="wrap">
+					<dl>
+						<dt>文件存储</dt>
+						<dd><a href="#">资料册</a></dd>
+						<dd><a href="#">文件夹</a></dd>
+						<dd><a href="#">孔形文件夹</a></dd>
+						<dd><a href="#">档案盒</a></dd>
+						<dd><a href="#">档案快劳夹</a></dd>
+					</dl>
+
+						<a class="img" href="#"><img src="img/index_img/1409891207.jpg" ></a>
+				
+			</div>
+				<div class="wrap">
+					<dl>
+						<dt>桌面用品</dt>
+						<dd><a href="#">计算器</a></dd>
+						<dd><a href="#">订书机/起钉器</a></dd>
+						<dd><a href="#">订书钉</a></dd>
+						<dd><a href="#">打孔器</a></dd>
+						<dd><a href="#">笔筒</a></dd>
+					</dl>
+
+						<a class="img" href="#"><img src="img/index_img/1409894775.jpg"></a>
+				
+				</div>
+			</div>
+			
+			<ul class="conList left">
+   			<li>
+				<a class="img" href="#"><img src="img/index_img/1469693651.jpg"></a>
+				<h4><ahref="#">超值大包装晨光 GP-1008 0.5mm按式签字笔（144支/12盒/条)</a></h4>
+				<span class="price">¥252.00/条</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img"href="#"><img src="img/index_img/1415971850.png" ></a>
+				<h4><a href="#">3M 654 3*3经典系列便条纸 报事贴 黄色 76*76mm(12本/包)</a></h4>
+				<span class="price">¥57.00/包</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1434081415.jpg"></a>
+				<h4><a href="#">益尔高（EAGLE）  A4/2寸5CM纸板文件夹9308B</a></h4>
+				<span class="price">¥10.50/个</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1469694668.jpg"></a>
+				<h4><a href="#">晨光   1008签字笔（12支/盒）</a></h4>
+				<span class="price">¥21.00/盒</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1417331924.jpg"></a>
+				<h4><a href="#">金得利  EH303A-6  A4 11孔活页袋(0.06mm)-彩盒100个装</a></h4>
+				<span class="price">¥35.00/包</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#" ><img src="img/index_img/1430044263.jpg"></a>
+				<h4><a href="#">豪桦利 HL828片 2寸塑料折叠档案盒35mm</a></h4>
+				<span class="price">¥4.20/个</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#" ><img src="img/index_img/1425919568.jpg"></a>
+				<h4><a href="#">国俊众博 1225 A5/25K皮面记事本 74张内芯 仿皮笔记...</a></h4>
+				<span class="price">¥4.50/本</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1407139848.jpg"></a>
+				<h4><a href="#">1413026527.jpg</a></h4>
+				<span class="price">¥4.50/个</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1407949008.jpg"></a>
+				<h4><a href="#">中华  HB铅笔(10支装)</a></h4>
+				<span class="price">¥5.00/把</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1430044263.jpg"></a>
+				<h4><a href="#">豪桦利 HL838片 3寸塑料折叠档案盒55mm</a></h4>
+				<span class="price">¥4.50/个</span>
+				
+				
+			</li>			
+		</ul>
+	</div>
+	
+	<!--
+    	三楼
+    -->
+	<div class="indexShopBox">
+		<dl class="titList">
+			<dt><span>3F</span>办公设备</dt>
+			<dd class="hover"><a href="#">特价商品</a></dd>
+	 			<dd><a href="#">复印机/传真机</a></dd>
+	 			<dd><a href="#">打印设备</a></dd>
+	 			<dd><a href="#">财务行政设备</a></dd>
+	 			<dd><a href="#">印后处理设备</a></dd>
+	 			<dd><a href="#">装订塑封耗材</a></dd>
+	 		</dl>
+		<div class="sub left">
+			<div class="wrap">
+				<dl>
+					<dt>复印机/传真机</dt>
+					<dd><a href="#">复印机</a></dd>
+					<dd><a href="#">传真机</a></dd>
+				
+				</dl>
+
+					<a class="img" ><img src="img/index_img/1409890309.jpg" ></a>
+				
+			</div>
+				<div class="wrap">
+					<dl>
+						<dt>打印设备</dt>
+						<dd><a href="#">打印机</a></dd>
+						<dd><a href="#">一体机</a></dd>
+						<dd><a href="#">针式打印机</a></dd>
+						<dd><a href="#">标签打印机/色带</a></dd>
+						<dd><a href="#">扫描仪</a></dd>
+					</dl>
+
+						<a class="img" href="#"><img src="img/index_img/1409891334.jpg" ></a>
+				
+			</div>
+				<div class="wrap">
+					<dl>
+						<dt>财务行政设备</dt>
+						<dd><a href="#">考勤机</a></dd>
+						<dd><a href="#">点钞/验钞机器</a></dd>
+						<dd><a href="#">支票打印机</a></dd>
+						<dd><a href="#">装订机</a></dd>
+						<dd><a href="#">标价机</a></dd>
+					</dl>
+
+						<a class="img" href="#"><img src="img/index_img/1409890505.jpg"></a>
+				
+				</div>
+			</div>
+			
+			<ul class="conList left">
+   			<li>
+				<a class="img" href="#"><img src="img/index_img/1411141766.jpg"></a>
+				<h4><ahref="#">鑫风云 10丝 A4 透明装订胶片（100张/包）</a></h4>
+				<span class="price">¥20.90/包</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img"href="#"><img src="img/index_img/1408954029.jpg" ></a>
+				<h4><a href="#">惠普（HP） Deskjet 1010 彩色喷墨打印机</a></h4>
+				<span class="price">¥225.00/台</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1411146278.jpg"></a>
+				<h4><a href="#">鑫风云 230g A4 深蓝色装订封面皮纹纸（100张/包）</a></h4>
+				<span class="price">¥19.00/包</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1410232822.jpg"></a>
+				<h4><a href="#">国产 8mm 装订胶圈 装订20-40页(100个/盒)</a></h4>
+				<span class="price">¥12.00/盒</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1411138442.jpg"></a>
+				<h4><a href="#">鑫风云 20丝 A4 透明装订胶片（100张/包）</a></h4>
+				<span class="price">¥29.40/包</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#" ><img src="img/index_img/1407734383.jpg"></a>
+				<h4><a href="#">齐心 B2988  高效省力胶圈装订机</a></h4>
+				<span class="price">¥210.00/台</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#" ><img src="img/index_img/1410234608.jpg"></a>
+				<h4><a href="#">国产 5mm 黑色装订夹条 装订20-40页(100个/盒)</a></h4>
+				<span class="price">¥22.40/盒</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1407139848.jpg"></a>
+				<h4><a href="#">惠普（HP） HP Laserjet PRO P1106激光打印机</a></h4>
+				<span class="price">¥790.00/台</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1408937521.jpg"></a>
+				<h4><a href="#">惠普（HP） LaserJet Pro M1136 黑白多功能激光一体机 （打印 复印 扫描）</a></h4>
+				<span class="price">¥1275.00/台</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1411142804.jpg"></a>
+				<h4><a href="#">鑫风云 120g A4 装订封面皮纹纸（100张/包）</a></h4>
+				<span class="price">¥14.00/包</span>
+				
+				
+			</li>			
+		</ul>
+	</div>
+	
+	<!--
+    	四楼
+    -->
+	<div class="indexShopBox">
+		<dl class="titList">
+			<dt><span>4F</span>电脑/通讯/数码</dt>
+			<dd class="hover"><a href="#">特价商品</a></dd>
+	 			<dd><a href="#">电脑整机</a></dd>
+	 			<dd><a href="#">存储介质</a></dd>
+	 			<dd><a href="#">电脑周边</a></dd>
+	 			<dd><a href="#">通讯/数码</a></dd>
+	 			<dd><a href="#">网络产品</a></dd>
+	 		</dl>
+		<div class="sub left">
+			<div class="wrap">
+				<dl>
+					<dt>复印机/传真机</dt>
+					<dd><a href="#">笔记本</a></dd>
+					<dd><a href="#">台式机</a></dd>
+					<dd><a href="#">一体机</a></dd>
+				
+				</dl>
+
+					<a class="img" ><img src="img/index_img/1466003745.jpg" ></a>
+				
+			</div>
+				<div class="wrap">
+					<dl>
+						<dt>存储介质</dt>
+						<dd><a href="#">刻录光盘</a></dd>
+						<dd><a href="#">U盘</a></dd>
+						<dd><a href="#">移动硬盘</a></dd>
+						<dd><a href="#">存储卡</a></dd>
+						
+					</dl>
+
+						<a class="img" href="#"><img src="img/index_img/1409830811.jpg" ></a>
+				
+			</div>
+				<div class="wrap">
+					<dl>
+						<dt>电脑周边</dt>
+						<dd><a href="#">鼠标</a></dd>
+						<dd><a href="#">键盘</a></dd>
+						<dd><a href="#">摄像头/散热器</a></dd>
+						<dd><a href="#">耳机/耳麦</a></dd>
+						<dd><a href="#">HUB/读卡器</a></dd>
+					</dl>
+
+						<a class="img" href="#"><img src="img/index_img/1409902916.jpg"></a>
+				
+				</div>
+			</div>
+			
+			<ul class="conList left">
+   			<li>
+				<a class="img" href="#"><img src="img/index_img/1412494449.jpg"></a>
+				<h4><ahref="#">SONY DVD+R 10片装 16X 4.7GB刻录盘</a></h4>
+				<span class="price">¥26.00/筒</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img"href="#"><img src="img/index_img/1430495348.jpg" ></a>
+				<h4><a href="#">紫光鸿运 K100 有线键盘 PS/2接口</a></h4>
+				<span class="price">¥28.00/个</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1411110835.jpg"></a>
+				<h4><a href="#">金士顿 8G DT101 G2 U盘</a></h4>
+				<span class="price">¥26.00/个</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1435833617.jpg"></a>
+				<h4><a href="#">公牛(BULL) GN-403 8位5米 插座 插排 插线板 接线板</a></h4>
+				<span class="price">¥45.00/个</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1407915574.jpg"></a>
+				<h4><a href="#">公牛 GN-607 4位1.8米插座 插排 插线板 接线板</a></h4>
+				<span class="price">¥25.00/个</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#" ><img src="img/index_img/1430495348.jpg"></a>
+				<h4><a href="#">紫光鸿运 K100 有线键盘 USB接口</a></h4>
+				<span class="price">¥32.00/个</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#" ><img src="img/index_img/1412742847.jpg"></a>
+				<h4><a href="#">国产 薄塑料光盘袋(100个/包)</a></h4>
+				<span class="price">¥6.00/包
+				</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1434446860.jpg"></a>
+				<h4><a href="#">清华同方 CD-R 特供 50片装 52X 700M刻录盘" </a></h4>
+				<span class="price">¥49.50/筒</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1411116605.jpg"></a>
+				<h4><a href="#">金士顿 4G TF存储卡</a></h4>
+				<span class="price">¥26.00/个</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1410949303.jpg"></a>
+				<h4><a href="#">双飞燕 KR-85键盘 PS/2接口</a></h4>
+				<span class="price">¥46.00/个</span>
+				
+				
+			</li>			
+		</ul>
+	</div>
+	
+	<!--
+    	五楼
+    -->
+	<div class="indexShopBox">
+		<dl class="titList">
+			<dt><span>5F</span>生活日用</dt>
+			<dd class="hover"><a href="#">特价商品</a></dd>
+	 			<dd><a href="#">小家电</a></dd>
+	 			<dd><a href="#">日常用品</a></dd>
+	 			<dd><a href="#">清洁用品</a></dd>
+	 			<dd><a href="#">生活日用</a></dd>
+	 			<dd><a href="#">食品饮料</a></dd>
+	 		</dl>
+		<div class="sub left">
+			<div class="wrap">
+				<dl>
+					<dt>小家电</dt>
+					<dd><a href="#">电水壶</a></dd>
+					<dd><a href="#">饮水机</a></dd>
+					<dd><a href="#">微波炉</a></dd>
+					<dd><a href="#">电风扇</a></dd>
+					<dd><a href="#">吸尘器</a></dd>
+				
+				</dl>
+
+					<a class="img" ><img src="img/index_img/1409895719.jpg" ></a>
+				
+			</div>
+				<div class="wrap">
+					<dl>
+						<dt>日常用品</dt>
+						<dd><a href="#">电池/充电器</a></dd>
+						<dd><a href="#">钟表</a></dd>
+						<dd><a href="#">锁具/钥匙圈/扣/箱</a></dd>
+						<dd><a href="#">投诉/意见箱</a></dd>
+						<dd><a href="#">小拉车/梯子/货架</a></dd>
+						
+					</dl>
+
+						<a class="img" href="#"><img src="img/index_img/1409899183.jpg" ></a>
+				
+			</div>
+				<div class="wrap">
+					<dl>
+						<dt>清洁用品</dt>
+						<dd><a href="#">厨卫清洁</a></dd>
+						<dd><a href="#">衣物洗涤</a></dd>
+						<dd><a href="#">香皂/洗手液</a></dd>
+						<dd><a href="#">个人洗护</a></dd>
+						<dd><a href="#">清洁工具</a></dd>
+					</dl>
+
+						<a class="img" href="#"><img src="img/index_img/1404885391.jpg"></a>
+				
+				</div>
+			</div>
+			
+			<ul class="conList left">
+   			<li>
+				<a class="img" href="#"><img src="img/index_img/1404379872.jpg"></a>
+				<h4><ahref="#">威猛先生   500+100克玻璃清洁剂</a></h4>
+				<span class="price">¥32.00</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img"href="#"><img src="img/index_img/1448766416.jpg" ></a>
+				<h4><a href="#">顺兴 SX-331 小眼方筐 米罗 文件筐 L310*W230*H80mm</a></h4>
+				<span class="price">¥4.90/个</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1414115890.jpg"></a>
+				<h4><a href="#">绿奥  210g花狸猫精装纸杯(50个/包)</a></h4>
+				<span class="price">¥6.00/包</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1407393347.jpg"></a>
+				<h4><a href="#">国产 30*30cm抹布毛巾</a></h4>
+				<span class="price">¥3.00/条</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1404904733.jpg"></a>
+				<h4><a href="#">滴露   500克健康抑菌洗手液</a></h4>
+				<span class="price">¥19.90/瓶</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#" ><img src="img/index_img/1407393644.jpg"></a>
+				<h4><a href="#">国产45*50cm  白色垃圾袋6.7两（100个/包）</a></h4>
+				<span class="price">¥8.00/包</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#" ><img src="img/index_img/1403859008.jpg"></a>
+				<h4><a href="#">心相印      荼语系列200软抽DT3200（3包/提）</a></h4>
+				<span class="price">¥16.20/提</span>
+				
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1404967444.jpg"></a>
+				<h4><a href="#">优质点胶手套12付/包 </a></h4>
+				<span class="price">¥45.00/包</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1448709212.jpg"></a>
+				<h4><a href="#">顺兴 SX-806 扫把簸箕套装</a></h4>
+				<span class="price">¥10.00/套</span>
+				
+				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1404913603.jpg"></a>
+				<h4><a href="#">蓝月亮    500G+500G芦荟抑菌洗手液（瓶+袋组合装）/a></h4>
+				<span class="price">¥18.90/组</span>
+				
+				
+			</li>			
+		</ul>
+	</div>
+	
+	<!--
+    	六楼
+    -->
+	<div class="indexShopBox">
+		<dl class="titList">
+			<dt><span>6F</span>办公家具</dt>
+			<dd class="hover"><a href="#">特价商品</a></dd>
+ 			<dd><a href="#">存储柜</a></dd>
+ 			<dd><a href="#">保险柜</a></dd>
+ 			<dd><a href="#">办公桌台</a></dd>
+ 		</dl>
+		<div class="sub left">
+  			<div class="wrap">
+				<dl>
+					<dt>存储柜</dt>
+					<dd><a href="#">铁皮文件柜</a></dd>
+					<dd><a href="#">更衣柜</a></dd>
+					<dd><a href="#">底图柜</a></dd>
+					<dd><a href="#">书刊柜</a></dd>
+					<dd><a href="#">推柜</a></dd>
+				</dl>
+
+					<a class="img" href="#"><img src="img/index_img/1409899959.jpg"></a>				
+			</div>
+		</div>
+		
+		<ul class="conList left">
+   			<li>
+				<a class="img" href="#"><img src="img/index_img/1412852599.jpg"></a>
+				<h4><a href="#">钢制电脑桌LH-Z009(1200*600*760cm)</a></h4>
+				<span class="price">¥560.00/张</span>
+				
+				
+			</li>			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1412752977.jpg"></a>
+				<h4><a href="#">分体玻璃平开柜(H1850*W900*D390mm)</a></h4>
+				<span class="price">¥580.00/组</span>				
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1412847343.jpg"></a>
+				<h4><a href="#">钢制三屉活动柜   推柜(W400*D460*H670mm)</a></h4>
+				<span class="price">¥380.00/个</span>								
+			</li>			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1412755096.jpg"></a>
+				<h4><a href="#">扣手无屉平开双节文件柜 (H1850*W900*D390mm)</a></h4>
+				<span class="price">¥580.00/组</span>								
+			</li>
+			
+			<li>
+				<a class="img" href="#"><img src="img/index_img/1412850782.jpg"></a>
+				<h4><a href="#">九门更衣柜(H1850*W500*D420mm)</a></h4>
+				<span class="price">¥690.00/组</span>								
+			</li>
+			
+		</ul>
+	</div>
+	</section>
+	
+	<!--注册页面底部-->
+        <div class="end sub">
+			<div class="serviceLink">
+				<dl>
+					<dt>购物指南</dt>
+								   <dd><a href="#">注册新用户</a></dd>
+					 			   <dd><a href="#">购物流程</a></dd>
+					 			   <dd><a href="#">订单查询</a></dd>
+					 			   <dd><a href="#">常见购物问题</a></dd>
+					 			
+				</dl>
+				<dl>
+					<dt>订单支付</dt>
+							       <dd><a href="#">货到付款</a></dd>
+					 			   <dd><a href="#">在线支付</a></dd>
+					 			   <dd><a href="#">如何办理退款</a></dd>
+					 			   <dd><a href="#">发票制度</a></dd>
+					 			
+				</dl>
+				<dl>
+					<dt>订单配送</dt>
+								   <dd><a href="#">配送费用</a></dd>
+					 			   <dd><a href="#">配送时间和范围</a></dd>
+					 			   <dd><a href="#">配送常见问题</a></dd>
+					 			   <dd><a href="#">配送方式</a></dd>
+					 			
+				</dl>
+				<dl>
+					<dt>售后服务</dt>
+							       <dd><a href="#">缺货处理</a></dd>
+					 			   <dd><a href="#">退换货政策</a></dd>
+					 			   <dd><a href="#">退换货流程</a></dd>
+					 			   <dd><a href="#">联系客服</a></dd>
+					 			
+				</dl>
+				<dl>
+					<dt>帮助中心</dt>
+								   <dd><a href="#">关于我们</a></dd>
+					 			   <dd><a href="#">积分兑换</a></dd>
+					 			   <dd><a href="#">建议反馈</a></dd>
+					 			   <dd><a href="#">正品保证</a></dd>
+				</dl>	 		
+			</div>
+			
+			
+			<p class="logo">Copyright © 2016 北京中一文仪商贸有限公司 All Rights Reserved 备案号：京ICP备14012128号&nbsp;&nbsp;<img src="css/img/pic.gif"> </p>
+		</div>
+	
+	</body>
+</html>
