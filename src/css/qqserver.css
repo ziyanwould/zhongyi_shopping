@@ -1,0 +1,22 @@
+/*qq*/
+/*ins#qiao-icon-wrap{top:15%}
+*/
+.service{width:135px;height:303px;background:url(img/service.png) no-repeat;padding:12px 0 0 46px;position:fixed;right:-150px; _right:0px; top:180px; margin-top:0px; _background:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="img/service.png"); _position:absolute;z-index:1}
+
+.service .green{color:#cc0003;height:24px;width:122px;text-align:center;}
+
+.service .time{width:115px;height:16px;border-bottom:1px solid #f57713;text-align:center;color:#f57713;margin-bottom:8px;margin-left:3px;}
+
+.service .qq{ display:block;width:122px;height:38px;border-top:1px solid #e6e5e4;border-bottom:1px solid #e6e5e4;background:url(img/qq.jpg) no-repeat 4px 10px;line-height:38px;text-indent:30px;}
+
+.service .qq:link,.service .qq:visited{ color:#333;}
+
+.service .qq2{border-top:none;}
+
+.service .borderB{border-bottom:1px solid #e6e5e4;margin:8px 0 11px;border-bottom:1px solid #e6e5e4;}
+
+.service .phone{width:94px;padding-left:24px;height:42px;background:url(img/phone.jpg) no-repeat 5px 4px;border-bottom:1px solid #e6e5e4;padding-bottom:2px;}
+
+.service .phone span{ display:block;height:21px;padding-top:14px;color:#f57713;width:98px;text-align:center;font-size:12px; vertical-align:middle;font-weight:bold;}
+
+.service .btn{ width:31px; height:118px; cursor:pointer; position:absolute; left:0px; top:77px;}

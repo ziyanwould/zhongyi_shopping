@@ -5,12 +5,13 @@
 		<title>中一办公商城</title>
 		<link rel="stylesheet" href="css/base.css" />
 		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/qqserver.css" />
 		<script type="text/javascript" src="js/jquery-1.12.0.js" ></script>
 		<!--
         	/*主页轮播图*/
         -->
 		<script>
-			
+			 var xj =true;
 		    var i = -1;
 		    var time=0;//设置定时器
 		    var j = -1;
@@ -62,7 +63,24 @@
  			    
  				console.log(first);
 			})
+			   
+				$(".service .btn").click(function(){
+						$(".service").animate({"right":"0px"},200);
+				})
+					
+				$(".service .btn").dblclick(function(){	
+					 $(".service").animate({"right":"-150px"},200);		
+					
+				})		
+					
+					
 				
+					
+					
+				
+						
+						
+			
 				
 			})
 			
@@ -1761,6 +1779,22 @@
 			
 			<p class="logo">Copyright © 2016 北京中一文仪商贸有限公司 All Rights Reserved 备案号：京ICP备14012128号&nbsp;&nbsp;<img src="css/img/pic.gif"> </p>
 		</div>
+		
+		<div class="service" id="service" style="right: -150px;">
+		<div class="btn"></div>
+		<p class="green">上班时间</p>
+	    <p class="time">9:00-18:00</p>
+	    <p class="green">在线客服</p>
+	        <a class="qq">1486839115</a>
+	        <a class="qq">3252756593</a>
+	        <p class="green borderB">热线电话</p>
+	    <p class="phone"><span>010-67266715</span></p>
+	
+	</div>
+	
+		
+	
 	
 	</body>
+	
 </html>
