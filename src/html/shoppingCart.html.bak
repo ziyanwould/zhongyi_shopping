@@ -62,8 +62,34 @@
 		<form>
 		<table bgcolor="#e0e0e0" class="myCartNum3" cellpadding="0" cellspacing="1">
 				   
-			<tbody id="adds">
-				
+			<tbody>
+				<tr bgcolor="#ffffff" height="73">
+					<td width="357" valign="top">
+					    <a class="img" href="#"><img src="../css/img/goodS/0894min.jpg" style="width:50px; height:50px"></a>
+	                    <a class="name" href="#">惠普（HP） LaserJet Pro M1136 黑白多功能激光一体机 （打印 复印 扫描）</a>
+	                    <span class="col">颜色：默认</span>				
+					</td>
+	                
+	                <td id="housenum" style="display:none">12000</td>
+	                <td style="display:none">" /&gt;</td>
+					<td width="145">￥1275.00元</td>
+									<td width="112">台</td>
+					<td width="123">
+						<input type="hidden" name="dingdanghao" value="0">
+						<span class="jia gw_jian">-</span>
+						<input readonly="readonly" style="width:40px" value="1" class="num" type="text">
+						<span class="jian gw_jia">+</span>
+						<input type="hidden" name="g_id" value="7851">
+					</td>
+					<td width="158" color="#df1800">￥1275元</td>
+					
+					<td width="83">
+						<a class="shoucangshanchu" href="#" >收藏</a>
+						<a class="shoucangshanchu" href="#">删除</a>
+	           			<input type="hidden" name="goodsid" id="goodsid" value="7851">
+						<input type="hidden" name="molds" id="molds" value="4">
+					</td>
+			    </tr>
 			    
 			    
 			    
@@ -150,17 +176,15 @@
 
 	<script>
 	
-	var str = getCookie("arr");	
-	var arr =JSON.parse(str);
-	console.log(arr);
-    $(function(){
+	  
+     $(function(){
      
-			
+		/* var str = getCookie("arr");		   
+		 var arr = eval(str);*/
 		
-		 
-		    for (var i=0;i<arr.length;i++) {
-		    	
-		    	$tr = $('<tr bgcolor="#ffffff" height="73"></tr>');
+		for (var i = 0; i < 2; i++)	
+		{
+			$tr = $('<tr bgcolor="#ffffff" height="73"></tr>');
 			    $td1=$('<td width="357" valign="top"></td>');
 			         $('<a class="img" href="#"><img src="'+arr[i].osimg+'" style="width:50px; height:50px"></a>').appendTo($td1);
 		             $('<a class="name" href="#">'+arr[i].name+'</a>').appendTo($td1);
@@ -172,12 +196,8 @@
 				$('<td width="158" color="#df1800">￥'+arr[i].price+'元</td>')
 				$('<td width="83"><a class="shoucangshanchu" href="#" >收藏</a><a class="shoucangshanchu" href="#">删除</a><input type="hidden" name="goodsid" id="goodsid" value="7851"><input type="hidden" name="molds" id="molds" value="4"></td>').appendTo($tr);
 		  		
-			$('form #adds').prepend($tr);				
-					
-		    	
-		    }
-		
-			
+		$('form tbody').prepend($tr);				
+		}				
 	           			
 						
 									 
@@ -187,15 +207,7 @@
      		
 	 })
 		
-		
-		
-	function eval1 (str) {
-    var script = document.createElement('script');
-    script.type="text/javascript";
-    script.text=str;
-    document.getElementsByTagName('head')[0].appendChild(script);
-    document.head.removeChild(document.head.lastChild);
-    }
+	
 	</script>
 
 

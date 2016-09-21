@@ -6,9 +6,9 @@
 		<link rel="stylesheet" href="../css/base.css" />
 		<link rel="stylesheet" href="../css/reset.css" />
 		<link rel="stylesheet" href="../css/Description.css" />
-		<script type="text/javascript" src="../js/jquery-1.12.0.js" ></script>
-		<script src='../js/jquery-1.8.3.min.js'></script>
+		<script type="text/javascript" src="../js/jquery-1.12.0.js" ></script>		
         <script src='../js/jquery.elevateZoom-3.0.8.min.js'></script>
+        <script type="text/javascript" src="../js/mycookie.js" ></script>
 	</head>
 	<body>
 		<div class="indexTop">
@@ -44,7 +44,7 @@
 				</p>
 			</div>
 			<div style="margin-right:41px;" class="shopCar right">
-				<a href="#">去购物车结算</a>
+				<a href="shoppingCart.html" >去购物车结算</a>
 				<span class="num">1</span>
 			</div>
 			<div class="clear"></div>
@@ -96,7 +96,7 @@
 		<div class="infoIndexcon">
 			<div class="mousetrap left">
 				<!--<img src="../css/img/goodS/1408937521.jpg" width="180" />-->
-				<img id="zoom_04" src='../css/img/goodS/0894min.jpg' data-zoom-image="../css/img/goodS/0894big.jpg"/>
+				<img id="zoom_04" src='../css/img/goodS/0894min.jpg' data-zoom-image="../css/img/goodS/0894big.jpg" name='../css/img/goodS/0894min.jpg'/>
 			</div>
 			<div class="text left">
 				<h3 class="tit">惠普（HP） LaserJet Pro M1136 黑白多功能激光一体机 （打印 复印 扫描） </h3>
@@ -114,7 +114,7 @@
 				<div class="num">
 					<div class="boxs">
 						<span>购买数量：</span>
-						<input type="text" id="buynum" >
+						<input type="text" id="buynum" value="1">
 					</div>
 					<div class="jiajian left">
 						<p class="jia"></p>
@@ -430,6 +430,46 @@
 				lensFadeIn: 500,
 				lensFadeOut:500
 			});
+			
+			// 当点击“添加到购物车”，就添加 cookie 
+
+		    $(function(){
+		    	
+		    	var str = getCookie("arr");
+			
+				// 用于存储所有的商品
+				var arr = [];
+				
+				$('#buycar').click(function(){
+					// 这个是价格
+						var oPrice = $('.price strong').html()
+						console.log(oPrice);
+					// 这个商品的信息
+						var oProduct = $('.tit').html()
+						console.log(oProduct);
+						
+					// 取出商品名字的标签对象
+						var oSimg = $('#zoom_04').attr('src');
+						console.log(oSimg);
+						
+						// [TODO]  创建一个商品对象，并添加到数组中，然后将数组设置到 cookie 中
+						var obj = {};
+			
+						obj.name = oProduct;
+						obj.price = oPrice;
+			            obj.osimg = oSimg;
+						arr.push(obj);
+			           addCookie("arr", JSON.stringify(arr), 7);
+						alert("添加成功");
+						
+		              console.log(JSON.stringify(arr));
+		    	
+				
+			 })
+				
+			 
+			})	
+			
 		</script>
 	
 	</body>
