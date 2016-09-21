@@ -119,7 +119,7 @@
 					<td width="10"></td>
 					<td>
 						<label><input class="cheak" type="checkbox" checked="checked">&nbsp;<font color="#404040">我已看过并接受</font></label><a class="agreement" href="#">《用户协议》</a>
-						<input class="btn" type="submit" value="立即注册">
+						<input class="btn" id="btns" type="submit" value="立即注册">
 						<a class="has" href="#">我已有帐号，我要登录</a><br>
 						<a class="has" href="#">您忘记密码了吗？</a>
 					</td>
@@ -185,6 +185,62 @@
 			
 		 	
 		});
+		
+		var oCheck =document.getElementById("btns");
+	 	var oUsername = document.getElementById("uid");
+	 	var oPassword = document.getElementById("psw2");
+		
+		  oCheck.onblur=function(e){
+		 e= e|| window.event;
+		 if (oCheck.checked)
+		{
+			var strUsername = oUsername.value;
+			var strPassword = oPassword.value;
+			addCookie("username", strUsername, 10);
+			addCookie("password", strPassword, 10);
+		}
+
+		alert("已保存您的用户信息");
+	   }
+		
+		
+		 	function getCookie(name)
+		{
+			
+			var str = document.cookie;
+
+			
+			var arr = str.split("; ");
+			6
+
+			for (var i = 0; i < arr.length; i++)
+			{
+				var arr2 = arr[i].split("=");
+
+				
+				
+				if (arr2[0] == name)
+				{
+					// 说明找到 cookie, 
+					// 返回当前 cookie 所对应的值
+					return arr2[1];
+				}
+			}
+
+			
+			return "";
+		}
+		
+			function addCookie(name, val, day)
+		{
+			var oDate = new Date();
+
+			oDate.setDate(oDate.getDate() + day);
+
+			document.cookie = ""+name+"="+val+";expires=" + oDate;
+		}
+		
+	
 		</script>
 
 	</body>
