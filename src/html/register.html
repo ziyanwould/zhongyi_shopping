@@ -7,6 +7,10 @@
 		<link rel="stylesheet" href="../css/base.css" />		
 		<script type="text/javascript" src="../js/jquery-2.1.0.min.js" ></script>
 		<script type="text/javascript" src="../js/easyform.js" ></script>
+		<style>
+		.error{color:#f00;}
+		.success{color:#0f0;}
+		</style>
 	</head>
 	<body>
 		
@@ -98,7 +102,7 @@
 				<tr height="37">
 					<td class="oRight">手机</td>
 					<td width="10"></td>
-					<td><input class="text" name="mobile" type="text" easyform="phi;real-time;" message="请填写正确手机号" easytip="disappear:lost-focus;theme:blue;"></td>
+					<td><input class="text" name="mobile" id="mobile" type="text" easyform="phi;real-time;" message="请填写正确手机号" easytip="disappear:lost-focus;theme:blue;"></td>
 				</tr>
 				<tr height="37">
 					<td class="oRight">密码提示问题</td>
@@ -183,20 +187,118 @@
 		$(document).ready(function(){
 			$('.registerform').easyform();
 			
+			//判断邮箱是否被占用
+			
+			var $email = $('#email');
+			
+
+			// 给按钮绑定点击事件，并把输入的用户提交给服务器
+			// ajax请求
+			 $email.on('blur',function(){
+				var email = $email.val();
+				var $span = $email.next();
+
+				$.ajax({
+					// api地址（数据请求地址）
+					url:'/ajax/checkemail',
+
+					// 传给服务器的数据
+					data:{regname:email},
+
+					// 成功后执行
+					success:function(res){
+						// 后台传回的都是字符串
+						console.log(res);
+
+						// 请求成功后先清除
+						$email.next('p').remove();
+
+						if(res==='false'){
+							$email.removeClass().addClass('error')
+							$('<p/>').addClass('error').html('你输入的邮箱名已被注册').insertAfter($span);
+						}else{
+							$email.removeClass().addClass('success');
+						}
+					}
+				})
+			})
+			
+			//判断用户名是否被占用
+			var $username = $('#uid');
+			var $btn = $username.next();
+			$username.on('blur',function(){
+				var username = $username.val();
+
+				$.ajax({
+					// api地址（数据请求地址）
+					url:'/ajax/checkname',
+
+					// 传给服务器的数据
+					data:{regname:username},
+
+					// 成功后执行
+					success:function(res){
+						// 后台传回的都是字符串
+						console.log(res);
+
+						// 请求成功后先清除
+						$btn.next('p').remove();
+
+						if(res==='false'){
+							$username.removeClass().addClass('error')
+							$('<p/>').addClass('error').html('你输入的用户名已被注册').insertAfter($btn);
+						}else{
+							$username.removeClass().addClass('success');
+						}
+					}
+				})
+			})
+			
+			//判断手机是否被占用
+			var $mobile = $('#mobile');
+			
+			$mobile.on('blur',function(){
+				var mobile = $mobile.val();
+
+				$.ajax({
+					// api地址（数据请求地址）
+					url:'/ajax/checkmobile',
+
+					// 传给服务器的数据
+					data:{regname:mobile},
+
+					// 成功后执行
+					success:function(res){
+						// 后台传回的都是字符串
+						console.log(res);
+
+						// 请求成功后先清除
+						$mobile.next('p').remove();
+
+						if(res==='false'){
+							$mobile.removeClass().addClass('error')
+							$('<p/>').addClass('error').html('你输入的手机号已被注册').insertAfter($mobile);
+						}else{
+							$mobile.removeClass().addClass('success');
+						}
+					}
+				})
+			})
+			
 		 	
 		});
 		
 		var oCheck =document.getElementById("btns");
-	 	var oUsername = document.getElementById("uid");
+	 	var oemail = document.getElementById("uid");
 	 	var oPassword = document.getElementById("psw2");
 		
 		  oCheck.onblur=function(e){
 		 e= e|| window.event;
 		 if (oCheck.checked)
 		{
-			var strUsername = oUsername.value;
+			var stremail = oemail.value;
 			var strPassword = oPassword.value;
-			addCookie("username", strUsername, 10);
+			addCookie("email", stremail, 10);
 			addCookie("password", strPassword, 10);
 		}
 
