@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="../css/base.css" />
 		<script type="text/javascript" src="../js/jquery-1.12.0.js" ></script>
 		<script src="../js/mycookie.js"> </script>
+		<script type="text/javascript" src="../js/js.js" ></script>
 	</head>
 	<body>
 		<!--页面顶部-->
@@ -72,7 +73,7 @@
 							
 				<tr align="right" bgcolor="#f5f5f5" height="148">
 					<td colspan="6">
-						<p class="zongjitext jians nums">商品数量总计：<b>1件</b></p>
+						<p class="zongjitext jians nums">商品数量总计：<b id="jianshu">1件</b></p>
 						<p class="zongjitext">商品金额总计：<b class="zongjia zhongshu">￥1275元</b></p>
 						<input type="hidden" id="zongjia" name="" value="1275">
 					</td>
@@ -85,7 +86,7 @@
 			<tr bgcolor="#f5f5f5" align="right" height="36" class="jiesuan">
 				<td colspan="5">
 					<input class="btn" type="submit" value="">
-						<strong class="zongjia zhongshu">￥1275元</strong>
+						<strong class="zongjia zhongshu " >￥1275元</strong>
 						<span>商品总价（不含运费）：</span>
 						<div class="goto">
 						   <a href="#">继续购物</a>
@@ -167,9 +168,9 @@
 		             $('<span class="col">颜色：默认</span>').appendTo($td1);		
 		        $td1.appendTo($tr ); 
 	        	$('<td id="housenum" style="display:none">12000</td> <td style="display:none">" /&gt;</td>').appendTo($tr ); 
-	            $('<td width="145">￥'+arr[i].price+'元</td><td width="112">台</td>').appendTo($tr ); 
-				$('<td width="123"><input type="hidden" name="dingdanghao" value="0"><span class="jia gw_jian">-</span><input readonly="readonly" style="width:40px" value="1" class="num" type="text"><span class="jian gw_jia">+</span><input type="hidden" name="g_id" value="7851"></td>').appendTo($tr)
-				$('<td width="158" color="#df1800">￥'+arr[i].price+'元</td>')
+	            $('<td width="145">'+arr[i].price+'</td><td width="112">台</td>').appendTo($tr ); 
+				$('<td width="123"><input type="hidden" name="dingdanghao" value="0"><span class="jia gw_jian" >-</span><input readonly="readonly" style="width:40px" value="1" class="text_box1" type="text"><span class="jian gw_jia" >+</span><input type="hidden" name="g_id" value="7851"></td>').appendTo($tr)
+				$('<td width="158" color="#df1800">'+arr[i].price+'</td>')
 				$('<td width="83"><a class="shoucangshanchu" href="#" >收藏</a><a class="shoucangshanchu" href="#">删除</a><input type="hidden" name="goodsid" id="goodsid" value="7851"><input type="hidden" name="molds" id="molds" value="4"></td>').appendTo($tr);
 		  		
 			$('form #adds').prepend($tr);				
@@ -178,10 +179,29 @@
 		    }
 		
 			
-	           			
-						
-									 
-	                
+		         			
+			//商品计算价格
+			var t = $(".text_box1");
+			$(".gw_jia").click(function () {
+				t.val(parseInt(t.val()) + 1)
+				setTotal();
+			})
+			$(".gw_jian").click(function () {
+				t.val(parseInt(t.val()) - 1)
+				setTotal(); 
+			})
+			function setTotal() {
+	
+				$(".zhongshu ").html((parseInt(t.val()) * 1275).toFixed(2));
+				$("#jianshu").html(parseInt(t.val())) ;
+			}
+			setTotal();
+		 					 
+	        $(".shoucangshanchu").click(function () { 
+	          var $delete = $(this).parent().parent().remove();
+	            console.log( $delete);
+	        
+	        })
 		         
      	
      		
