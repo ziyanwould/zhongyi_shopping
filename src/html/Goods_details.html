@@ -46,7 +46,7 @@
 			</div>
 			<div style="margin-right:41px;" class="shopCar right">
 				<a href="shoppingCart.html" >去购物车结算</a>
-				<span class="num">0</span>
+				<span class="num numss">0</span>
 			</div>
 			<div class="clear"></div>
 	    <nav class="nav left">
@@ -441,6 +441,21 @@
 				// 用于存储所有的商品
 				var arr = [];
 				var $shopCar = $('.shopCar')
+				
+			//商品数量改变
+			
+				    var t = $('#buynum');
+				$(".jia").click(function () {
+					t.val(parseInt(t.val()) + 1)
+					
+				})
+				$(".jian").click(function () {
+					t.val(parseInt(t.val()) - 1)
+					 
+				})
+				
+				
+				
 				$('#buycar').click(function(){
 					
 					//购物车动画效果以及加入购物车数量显示
@@ -464,13 +479,22 @@
 		                    opacity:0
 		                },function(){
 		                	$cloneImg.remove();
-		                	$num = $('.num');
-		                	$num.html(parseInt($num.html()) + 1);
+		                	$num = $('.numss');
+		                	$num.html(parseInt($num.html()) + parseInt(t.val()));
+		                	for (var i=0;i<parseInt(t.val());i++) {
+		                		cookies();
+		                		
+		                	}
+		                  setImmediate(function(){
+		                  	alert("添加成功")
+		                  })
 		                	console.log($img.width(),$img.offset().left,$img.offset().top);
 		                })
 						
 				//cookei存储	
-					// 这个是价格
+					
+					function cookies(){
+					   // 这个是价格
 						var oPrice = $('.price strong').html()
 						console.log(oPrice);
 					// 这个商品的信息
@@ -489,7 +513,9 @@
 			            obj.osimg = oSimg;
 						arr.push(obj);
 			           addCookie("arr", JSON.stringify(arr), 7);
-						//alert("添加成功");
+					}
+					
+						
 						
 		              console.log(JSON.stringify(arr));
 		    	

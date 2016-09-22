@@ -181,12 +181,14 @@
 			
 		         			
 			//商品计算价格
-			var t = $(".text_box1");
+			var t =$(('.text_box1')) 
 			$(".gw_jia").click(function () {
+				var t = $(this).parents().children('.text_box1');
 				t.val(parseInt(t.val()) + 1)
 				setTotal();
 			})
 			$(".gw_jian").click(function () {
+				var t = $(this).parents().children('.text_box1');
 				t.val(parseInt(t.val()) - 1)
 				setTotal(); 
 			})
