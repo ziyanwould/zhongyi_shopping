@@ -32,7 +32,7 @@
 			<h1 class="logo left"><a href="#">中一办公</a></h1>
 			<div style=" margin-left:207px;" class="serach left">
 	            <form name="search" id="search" method="get" action="#">
-	            	<input class="txt left" type="text" placeholder="请输入商品或商家" value="" name="goods_s">
+	            	<input class="txt left" type="text" placeholder="请输入商品或商家" >
 	            	<input class="btn left" type="submit" value="" name="">
 	            	
 	            </form>
@@ -46,7 +46,7 @@
 			</div>
 			<div style="margin-right:41px;" class="shopCar right">
 				<a href="shoppingCart.html" >去购物车结算</a>
-				<span class="num">1</span>
+				<span class="num">0</span>
 			</div>
 			<div class="clear"></div>
 	    <nav class="nav left">
@@ -440,8 +440,36 @@
 			
 				// 用于存储所有的商品
 				var arr = [];
-				
+				var $shopCar = $('.shopCar')
 				$('#buycar').click(function(){
+					
+					//购物车动画效果以及加入购物车数量显示
+					 	var $img = $('.poto');
+						  /*1.1>复制当前商品图片(用于实现动画效果)*/
+	            		
+	            		var $cloneImg = $img.clone();
+		            		// 把复制的图片写入页面，并设置样式
+		                $cloneImg.css({
+		                    position:'absolute',
+		                    width:$img.width(),
+		                    left:$img.offset().left,
+		                    top:$img.offset().top
+		                }).appendTo('body');
+		               
+		               // 给复制的图片设置动画效果
+		                $cloneImg.animate({
+		                    left:$shopCar.offset().left,
+		                    top:$shopCar.offset().top + $shopCar.outerHeight(),
+		                    width:100,
+		                    opacity:0
+		                },function(){
+		                	$cloneImg.remove();
+		                	$num = $('.num');
+		                	$num.html(parseInt($num.html()) + 1);
+		                	console.log($img.width(),$img.offset().left,$img.offset().top);
+		                })
+						
+				//cookei存储	
 					// 这个是价格
 						var oPrice = $('.price strong').html()
 						console.log(oPrice);
@@ -449,7 +477,7 @@
 						var oProduct = $('.tit').html()
 						console.log(oProduct);
 						
-					// 取出商品名字的标签对象
+					// 取出商品图片的标签对象
 						var oSimg = $('#zoom_04').attr('src');
 						console.log(oSimg);
 						
@@ -461,7 +489,7 @@
 			            obj.osimg = oSimg;
 						arr.push(obj);
 			           addCookie("arr", JSON.stringify(arr), 7);
-						alert("添加成功");
+						//alert("添加成功");
 						
 		              console.log(JSON.stringify(arr));
 		    	
