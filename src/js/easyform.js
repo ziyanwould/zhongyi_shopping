@@ -389,7 +389,7 @@
             
                "tell": function (ei, v, p)
             {
-                if (false ==/^(\d{3}-\d{8}|\d{4}-\d{7}|\d{4}-\d{8})$/.test(v)) 
+                if (false ==/^0\d{2,3}-?\d{7,8}$/.test(v)) 
                     return ei._error("tell");
                 else
                     return ei._success_rule("tell");
