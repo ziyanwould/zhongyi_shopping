@@ -150,15 +150,15 @@
 		</div>
 
 	<script>
-	
+	var zongji=0;
 	var str = getCookie("arr");	
 	var arr =JSON.parse(str);
 	console.log(arr);
     $(function(){
      
 			
-		
-		 
+		    $jianshu=$('#jianshu')
+		   
 		    for (var i=0;i<arr.length;i++) {
 		    	
 		    	$tr = $('<tr bgcolor="#ffffff" height="73"></tr>');
@@ -169,40 +169,51 @@
 		        $td1.appendTo($tr ); 
 	        	$('<td id="housenum" style="display:none">12000</td> <td style="display:none">" /&gt;</td>').appendTo($tr ); 
 	            $('<td width="145">'+arr[i].price+'</td><td width="112">台</td>').appendTo($tr ); 
-				$('<td width="123"><input type="hidden" name="dingdanghao" value="0"><span class="jia gw_jian" >-</span><input readonly="readonly" style="width:40px" value="1" class="text_box1" type="text"><span class="jian gw_jia" >+</span><input type="hidden" name="g_id" value="7851"></td>').appendTo($tr)
+				$('<td width="123" class="over"><input type="hidden" name="dingdanghao" value="0"><span class="jia gw_jian" >-</span><input readonly="readonly" style="width:40px" value="1" class="text_box1" type="text"><span class="jian gw_jia" >+</span><input type="hidden" name="g_id" value="7851"></td>').appendTo($tr)
 				$('<td width="158" color="#df1800">'+arr[i].price+'</td>')
 				$('<td width="83"><a class="shoucangshanchu" href="#" >收藏</a><a class="shoucangshanchu" href="#">删除</a><input type="hidden" name="goodsid" id="goodsid" value="7851"><input type="hidden" name="molds" id="molds" value="4"></td>').appendTo($tr);
-		  		
-			$('form #adds').prepend($tr);				
-					
+		  		$jianshu.html(parseInt(arr[i].unmber))
+				$('form #adds').prepend($tr);				
+				var moy =arr[i].price;	
+				var prices = (moy.replace(/[^0-9,\.]+/ig,""));//获取出价格，存储在变量
 		    	
 		    }
 		
 			
 		         			
 			//商品计算价格
-			var t =$(('.text_box1')) 
-			$(".gw_jia").click(function () {
+			
+			$(".gw_jia").click(function (zongji) {
 				var t = $(this).parents().children('.text_box1');
-				t.val(parseInt(t.val()) + 1)
+				$jianshu.html( parseInt($jianshu.html())+1)
+				t.val(parseInt(t.val()) + 1);				
 				setTotal();
+				
 			})
-			$(".gw_jian").click(function () {
+			$(".gw_jian").click(function (zongji) {
 				var t = $(this).parents().children('.text_box1');
+				$jianshu.html( parseInt($jianshu.html())-1)
 				t.val(parseInt(t.val()) - 1)
 				setTotal(); 
 			})
 			function setTotal() {
-	
-				$(".zhongshu ").html((parseInt(t.val()) * 1275).toFixed(2));
-				$("#jianshu").html(parseInt(t.val())) ;
+	          
+	       
+				$(".zhongshu ").html((( parseInt($jianshu.html()))*prices).toFixed(2));
+				$("#jianshu").html((parseInt($jianshu.html()))) ;
+				
 			}
 			setTotal();
-		 					 
+			
+			//删除时候模块
+		 	console.log(zongji);			 
 	        $(".shoucangshanchu").click(function () { 
-	          var $delete = $(this).parent().parent().remove();
-	            console.log( $delete);
-	        
+	       
+	        var shangcu =  $(this).parent().parent().children('.over').children('.text_box1').val();
+	        console.log(shangcu);
+	        $jianshu.html(parseInt( $jianshu.html())-parseInt(shangcu))    
+	        setTotal();
+	        $(this).parent().parent().remove();
 	        })
 		         
      	
@@ -211,13 +222,6 @@
 		
 		
 		
-	function eval1 (str) {
-    var script = document.createElement('script');
-    script.type="text/javascript";
-    script.text=str;
-    document.getElementsByTagName('head')[0].appendChild(script);
-    document.head.removeChild(document.head.lastChild);
-    }
 	</script>
 
 

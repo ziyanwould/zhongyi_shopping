@@ -485,9 +485,7 @@
 		                		cookies();
 		                		
 		                	}
-		                  setImmediate(function(){
-		                  	alert("添加成功")
-		                  })
+		                
 		                	console.log($img.width(),$img.offset().left,$img.offset().top);
 		                })
 						
@@ -511,14 +509,16 @@
 						obj.name = oProduct;
 						obj.price = oPrice;
 			            obj.osimg = oSimg;
+			            obj.unmber=$('.numss').html();
 						arr.push(obj);
 			           addCookie("arr", JSON.stringify(arr), 7);
+			           console.log(obj.unmber);
 					}
 					
 						
 						
 		              console.log(JSON.stringify(arr));
-		    	
+		    	  
 				
 			 })
 				
