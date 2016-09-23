@@ -17,9 +17,9 @@
 		    <a class="collect left" href="#">收藏中一办公</a>
 		    <div class="con right">
 			    <font color="#666666">您好，欢迎来到中一办公&nbsp;！</font> 				
-			    <a class="dlzc" href="#">请登录</a>
-			    |<a class="dlzc" href="#">免费注册</a>
-				|<a href="#">我的订单</a>|<a class="my" href="#">我的中一</a>
+			    <a class="dlzc" href="landing.html" >请登录</a>
+			    |<a class="dlzc" href="register.html" >免费注册</a>
+				|<a href="#">我的订单</a>|<a class="my" href="../index.html" >我的中一</a>
 				|<a class="my" href="#">帮助中心</a>
 				|<a href="#" >在线客服</a>|<font color="#666666">&nbsp;&nbsp;010-67266715</font>
 		    </div>
@@ -542,7 +542,7 @@
 				function comments (){
 					var $comment = $('#comment').val();
 					console.log("评论："+$comment);
-					$('<li><p>'+$comment+'</p></li>').appendTo('.context .commlist');
+					$('<li><span class="uname">游客</span><p style="text-indent:28px; ">'+$comment+'</p></li>').appendTo('.context .commlist');
 					$("#comment").val("");
 					
 					var $coms =	$('#coms');
