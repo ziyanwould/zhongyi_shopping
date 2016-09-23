@@ -438,9 +438,24 @@
 			// 当点击“添加到购物车”，就添加 cookie 
 
 		    $(function(){
+		    	addCookie("discuss",getCookie("discuss"), 30);
+		    	//从cookies获取之前评论数
+		    	if (getCookie("discuss")) {
 		    	
-		    	var str = getCookie("arr");
-			
+		    	var str = getCookie("discuss");	
+		    	console.log(str);
+		           var comss =JSON.parse(str);
+		              for (var i=0;i<comss.length;i++) {
+		              	$('<li><span class="uname">游客</span><p>'+comss[i].comments+'</p><span class="time">'+comss[i].mytiems+'</span></li>').appendTo('.context .commlist');
+	                		$('#coms').html(/*parseInt($('#coms').html())+*/parseInt(comss[i].unshu));	
+	                			
+	                			
+		              }
+		    		
+		    	}
+		    	
+		    	
+			    var pings = [];
 				// 用于存储所有的商品
 				var arr = [];
 				var $shopCar = $('.shopCar')
@@ -489,7 +504,7 @@
 		                		
 		                	}
 		                
-		                	console.log($img.width(),$img.offset().left,$img.offset().top);
+		                	//console.log($img.width(),$img.offset().left,$img.offset().top);
 		                })
 						
 				//cookei存储	
@@ -497,14 +512,14 @@
 					function cookies(){
 					   // 这个是价格
 						var oPrice = $('.price strong').html()
-						console.log(oPrice);
+						//console.log(oPrice);
 					// 这个商品的信息
 						var oProduct = $('.tit').html()
-						console.log(oProduct);
+						//console.log(oProduct);
 						
 					// 取出商品图片的标签对象
 						var oSimg = $('#zoom_04').attr('src');
-						console.log(oSimg);
+						//console.log(oSimg);
 						
 						// [TODO]  创建一个商品对象，并添加到数组中，然后将数组设置到 cookie 中
 						var obj = {};
@@ -512,15 +527,15 @@
 						obj.name = oProduct;
 						obj.price = oPrice;
 			            obj.osimg = oSimg;
-			            obj.unmber=$('.numss').html();
+			            obj.unmber=$('.numss').html();			         
 						arr.push(obj);
 			           addCookie("arr", JSON.stringify(arr), 7);
-			           console.log(obj.unmber);
+			           //console.log(obj.unmber);
 					}
 					
 						
 						
-		              console.log(JSON.stringify(arr));
+		              //console.log(JSON.stringify(arr));
 		    	  
 				
 			 })
@@ -541,7 +556,7 @@
 				
 				function comments (){
 					var $comment = $('#comment').val();
-					console.log("评论："+$comment);
+					//console.log("评论："+$comment);
 					
 					
 					$('<li><span class="uname">游客</span><p>'+$comment+'</p><span class="time">'+getDatetime()+'</span></li>').appendTo('.context .commlist');
@@ -549,6 +564,18 @@
 					
 					var $coms =	$('#coms');
 					$coms.html(parseInt($coms.html())+1);
+					
+					//将评论内容存储到cookies
+					  var discuss = {}; 
+					//存入打印内容  
+					discuss.comments=$comment;
+					//存入打印时间
+					discuss.mytiems =getDatetime();
+					//存入之前的评论总数
+					discuss.unshu  = $coms.html();
+					pings.push(discuss);
+					addCookie("discuss", JSON.stringify(pings), 30);
+					
 				}
 			 
 			})	
