@@ -162,22 +162,22 @@
 		    $jianshu=$('#jianshu')
 		   
 		    for (var i=0;i<arr.length;i++) {
-		    	
+		    	var moy =arr[i].price;	
+				var prices = (moy.replace(/[^0-9,\.]+/ig,""));//获取出价格，存储在变量
+				
 		    	$tr = $('<tr bgcolor="#ffffff" height="73"></tr>');
 			    $td1=$('<td width="357" valign="top"></td>');
 			         $('<a class="img" href="#"><img src="'+arr[i].osimg+'" style="width:50px; height:50px"></a>').appendTo($td1);
 		             $('<a class="name" href="#">'+arr[i].name+'</a>').appendTo($td1);
 		             $('<span class="col">颜色：默认</span>').appendTo($td1);		
-		        $td1.appendTo($tr ); 
-	        	$('<td id="housenum" style="display:none">12000</td> <td style="display:none">" /&gt;</td>').appendTo($tr ); 
-	            $('<td width="145">'+arr[i].price+'</td><td width="112">台</td>').appendTo($tr ); 
+		        $td1.appendTo($tr );        	
+	            $('<td width="145">￥'+prices+'元</td><td width="112">台</td>').appendTo($tr ); 
 				$('<td width="123" class="over"><input type="hidden" name="dingdanghao" value="0"><span class="jia gw_jian" >-</span><input readonly="readonly" style="width:40px" value="1" class="text_box1" type="text"><span class="jian gw_jia" >+</span><input type="hidden" name="g_id" value="7851"></td>').appendTo($tr)
-				$('<td width="158" color="#df1800">'+arr[i].price+'</td>')
+				$('<td width="158" color="#df1800" class="xiaoji">￥<span>'+prices+'</span>元</td>').appendTo($tr)
 				$('<td width="83"><a class="shoucangshanchu" href="#" >收藏</a><a class="shoucangshanchu" href="#">删除</a><input type="hidden" name="goodsid" id="goodsid" value="7851"><input type="hidden" name="molds" id="molds" value="4"></td>').appendTo($tr);
 		  		$jianshu.html(parseInt(arr[i].unmber))
 				$('form #adds').prepend($tr);				
-				var moy =arr[i].price;	
-				var prices = (moy.replace(/[^0-9,\.]+/ig,""));//获取出价格，存储在变量
+				
 		    	
 		    }
 		
@@ -185,16 +185,23 @@
 		         			
 			//商品计算价格
 			
+			//加法
 			$(".gw_jia").click(function (zongji) {
 				var t = $(this).parents().children('.text_box1');
-				$jianshu.html( parseInt($jianshu.html())+1)
+				var $xiaoji =$(this).parents().children('.xiaoji').children('span');
+				$jianshu.html( parseInt($jianshu.html())+1);
+			    $xiaoji.html( (parseInt($xiaoji.html())+parseInt(prices)).toFixed(2));
 				t.val(parseInt(t.val()) + 1);				
 				setTotal();
 				
 			})
+			
+			//减法
 			$(".gw_jian").click(function (zongji) {
 				var t = $(this).parents().children('.text_box1');
-				$jianshu.html( parseInt($jianshu.html())-1)
+				var $xiaoji =$(this).parents().children('.xiaoji').children('span');
+				$jianshu.html( parseInt($jianshu.html())-1);
+				$xiaoji.html( (parseInt($xiaoji.html())-parseInt(prices)).toFixed(2));
 				t.val(parseInt(t.val()) - 1)
 				setTotal(); 
 			})
