@@ -37,7 +37,7 @@ var server = http.createServer(function(req, res) {
                 }
                 break;
             case 'checkemail':
-                var names = ['448736378@qq.com','110@163.com','7758258@139.com','1341013587@qq.com','120@163.com','119@163.com';
+                var names = ['448736378@qq.com','110@163.com','7758258@139.com','1341013587@qq.com','120@163.com','119@163.com'];
                 if (params.query && params.query.regname) {
                     var name = params.query.regname;
                     resText = names.indexOf(name) != -1 ? 'false' : 'true';

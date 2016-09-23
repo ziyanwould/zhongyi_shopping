@@ -542,7 +542,8 @@
 				function comments (){
 					var $comment = $('#comment').val();
 					console.log("评论："+$comment);
-					$('<li><p>'+$comment+'</p></li>').appendTo('.context .commlist')
+					$('<li><p>'+$comment+'</p></li>').appendTo('.context .commlist');
+					$("#comment").val("");
 					
 					var $coms =	$('#coms');
 					$coms.html(parseInt($coms.html())+1);
