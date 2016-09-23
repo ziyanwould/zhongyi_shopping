@@ -525,7 +525,7 @@
 				
 			 })
 				
-				//客户商品评价，实现点击留言，或者回车键留言
+				//客户商品评价，实现点击留言，或者回车键留言(包括名称，内容，留言时间)
 				
 				$('.button').click(function(){
 					comments();
@@ -542,7 +542,9 @@
 				function comments (){
 					var $comment = $('#comment').val();
 					console.log("评论："+$comment);
-					$('<li><span class="uname">游客</span><p style="text-indent:28px; ">'+$comment+'</p></li>').appendTo('.context .commlist');
+					
+					
+					$('<li><span class="uname">游客</span><p>'+$comment+'</p><span class="time">'+getDatetime()+'</span></li>').appendTo('.context .commlist');
 					$("#comment").val("");
 					
 					var $coms =	$('#coms');
@@ -550,6 +552,12 @@
 				}
 			 
 			})	
+			
+			//获取标准时间
+			function getDatetime(){
+   			 var dt = new Date();
+    			return (dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+dt.getDate()+' '+dt.getHours()+':'+dt.getMinutes()+':'+dt.getSeconds()).replace(/([\-\: ])(\d{1})(?!\d)/g,'$10$2');
+			}
 			
 		</script>
 	

@@ -45,7 +45,7 @@ var server = http.createServer(function(req, res) {
                 break;
 
 			case 'checkname':
-                var names = ['张三','李四','王尼玛','奥巴马','刘家荣','韦露','李丁','陈荣','覃佳旭','陆永春'];
+                var names = ['zhangsan','lisi','wangnima','Obama','liujiarong','weilu','liding','chengrong','liubixv','luyongchun'];
                 if (params.query && params.query.regname) {
                     var name = params.query.regname;
                     resText = names.indexOf(name) != -1 ? 'false' : 'true';
