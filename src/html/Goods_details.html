@@ -233,7 +233,9 @@
 		</dl>
 	 </div>
 	 
-	 <!--详细页面-->
+	 <!--详细页面
+	 	导航行点击切换效果 
+	 -->
 	<script type="text/javascript">
 		$(function(){
 			$('#infoIndeMain1').find('.tabTit').find('li').click(function(){
@@ -343,10 +345,11 @@
   				<div class="con">
 						<!-- 评论区域开始 -->
 			<ul class="commlist">
+				
 			</ul>
 			<div class="commnum">
 				<span>
-					<i>0</i>条评论
+					<i id="coms">0</i>条评论
 				</span>
 			</div>
 			<div class="commnet">
@@ -522,6 +525,28 @@
 				
 			 })
 				
+				//客户商品评价，实现点击留言，或者回车键留言
+				
+				$('.button').click(function(){
+					comments();
+					
+				})
+				
+				$('.commnet').keypress(function(e){
+				  if(e.keyCode==13){ 
+				    comments();
+				
+				  }
+				})
+				
+				function comments (){
+					var $comment = $('#comment').val();
+					console.log("评论："+$comment);
+					$('<li><p>'+$comment+'</p></li>').appendTo('.context .commlist')
+					
+					var $coms =	$('#coms');
+					$coms.html(parseInt($coms.html())+1);
+				}
 			 
 			})	
 			
