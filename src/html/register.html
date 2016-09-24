@@ -289,16 +289,16 @@
 		});
 		//cookei注册页保存注册用户的用户名和密码信息
 		var oCheck =document.getElementById("btns");
-	 	var oemail = document.getElementById("uid");
+	 	var oUsername = document.getElementById("uid");
 	 	var oPassword = document.getElementById("psw2");
 		
 		  oCheck.onblur=function(e){
 		 e= e|| window.event;
 		 if (oCheck.checked)
 		{
-			var stremail = oemail.value;
+			var stremail = oUsername.value;
 			var strPassword = oPassword.value;
-			addCookie("email", stremail, 10);
+			addCookie("username", stremail, 10);
 			addCookie("password", strPassword, 10);
 		}
 

@@ -306,6 +306,8 @@ header .topScroll .top{ width:6px; height:3px; display:block; position:absolute;
 
 header .topScroll .bom{ width:6px; height:3px; display:block; position:absolute; background:url(../img/index_img/headerscrollB.jpg) no-repeat; top:24px; right:0px; cursor:pointer;}
 
+
+
 /*列表广告促销*/
 .main{ width:1210px; margin:0 auto; overflow:hidden; border-bottom:1px solid #cdcdcd;}
 
